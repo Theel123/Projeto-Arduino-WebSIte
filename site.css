@@ -6,6 +6,7 @@ body {
 
 h1, h2 {
 	font-family: "Open Sans Condensed", "Arial", sans-serif;
+	font-size: 40px;
 }
 
 main h1 {
@@ -13,10 +14,14 @@ main h1 {
 	background-color: #851944;
 	color: #FFF;
 	margin: 0px; 
+	font-family: "Open Sans Condensed", "sans-serif"
+	padding: 20px;
+	margin: 0;
 }
 
 p {
 	text-align: justify;
+	margin: 20px 0px;
 }
 blockquote {
 
@@ -24,5 +29,56 @@ blockquote {
 	padding: 10px;
 	border: solid 10px #C2CCCA;
 	width: 250px;
-	margin: 0px;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+strong {
+	font-weight: 600;
+}
+
+em {
+	font-style: italic;
+}
+
+nav {
+	background-color: #3C1D3D;
+	color: #F2FFFC;
+	text-align: center;
+	padding: 20px;
+	font-family: "Open Sans Condensed", sans-serif;
+}
+
+nav a {
+	color: inherit;
+	margin-bottom: 25px;
+}
+nav h1 {
+	font-size: 30px;
+	margin-bottom: 25px;
+}
+
+aside {
+	background-color: #3C1D3D;
+	color: #F2FFFC;
+	text-align: center;
+	padding: 20px;
+	font-family: "Open Sans Condensed", sans-serif;
+}
+aside li {
+	display: inline-block;
+}
+
+footer {	
+	background-color: #000;
+	color: #F2FFFC;
+	padding: 20px;
+}
+
+.redesSociais li {
+	display: inline-block;	
+}
+
+#redesSociais li {
+	display: inline-block;	
 }
