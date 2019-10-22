@@ -134,7 +134,8 @@ nav a {
 
 main {
 	float: left;
-	width: 85%;
+	width: 86%;
+	padding-bottom: 80px;
 }
 
 aside,
