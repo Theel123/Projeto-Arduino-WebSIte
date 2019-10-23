@@ -7,6 +7,7 @@ body {
 h1, h2 {
 	font-family: "Open Sans Condensed", "Arial", sans-serif;
 	font-size: 40px;
+	text-transform: uppercase;
 }
 
 main h1 {
@@ -79,6 +80,18 @@ footer {
 	display: inline-block;	
 }
 
-#redesSociais li {
-	display: inline-block;	
+.redesSociais a{
+	width: 40px;
+	height: 40px;
+	display: inline-block;
+	text-indent: -9999px;
+}
+.github {
+	background-image: url('github.png');
+}
+.linkedin {
+	background-image: url('linkedin.png');	
+}
+.twiiter{
+	background-image: url('twitter.png');
 }
