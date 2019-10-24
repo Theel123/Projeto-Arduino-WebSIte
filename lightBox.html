@@ -3,11 +3,33 @@
 <head>
 	<meta charset="utf-8">
 	<title>teste</title>
-    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
-
-    <script type="text/javascript">
-    	
+	<link rel="stylesheet" href="">
     
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript">
+
+		$(document).ready(function() {
+			$('.lightbox').click(function(){
+				$('.background, .box').animate({'opacity':'.60'}, 200, 'linear');
+				$('.box').animate({'opacity':'1.00'},200, 'linear');
+				$('.background, .box').css('display', 'block')
+			});
+
+			$('.close').click(function() {
+				$('.background, .box').animate({'opacity':'0'},200, 'linear', function() {
+					$('.background, .box').css('display', 'none');
+
+				});
+			});
+
+				$('.background').click(function() {
+				$('.background, .box').animate({'opacity':'0'},200, 'linear', function() {
+				$('.background, .box').css('display', 'none');
+
+				});
+			});
+		});
+
     </script>
 
 	<style type="text/css" media="screen">
