@@ -1,6 +1,6 @@
 body {
     font-family: "Crimson Text", "Times New Roman", serif;
-    background-color: #F2FFFC;
+    background-color: #navegacao-site;
     font-size: 120%;
     line-height: 1.5;
 }
@@ -19,7 +19,7 @@ h1 {
 
 .titulo-principal {
     text-align: center;
-    background-color: #851944;
+    background-color: #0E3A61;
     color: #FFF;
     padding: 2rem;
     border-bottom: .5rem solid #000;
@@ -41,7 +41,7 @@ main p {
 
 .navegacao-site {
     text-align: center;
-    background-color: #3C1D3D;
+    background-color: #000;
     color: #F2FFFC;
     padding: 1em;
 }
@@ -49,7 +49,6 @@ main p {
 .navegacao-site a {
     color: inherit;
     font-family: "Open Sans Condensed", "Arial", sans-serif;
-    text-transform: lowercase;
 }
 
 .navegacao-site h1 {

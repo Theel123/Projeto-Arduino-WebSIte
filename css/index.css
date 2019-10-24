@@ -22,7 +22,7 @@
     color: #000;
 }
 .saudacao em {
-    color: #851944;
+    color: #000000;
     font-size: 4em;
     -webkit-transform: rotate(-5deg) skew(-10deg);
             transform: rotate(-5deg) skew(-10deg);
@@ -30,7 +30,7 @@
 }
 .botao-index {
     font-size: 1.25em;
-    background-color: #851944;
+    background-color: #2D2D2D;
     color: #FFF;
     padding: .5em;
     border: .2em solid black;
@@ -50,7 +50,7 @@
     text-shadow: 5px 5px #000;
 }
 .trabalhos {
-    background-color: #3C1D3D;
+    background-color: #2585bc;
     border-top: .5em solid #000;
     border-bottom: .5em solid #000;
     background-image: linear-gradient(135deg, transparent, transparent 14px, rgba(0,0,0,.1) 15px, transparent 15px, transparent);
@@ -129,7 +129,7 @@ body {
     font-family: "Shadows Into Light", cursive;
     font-weight: bold;
     font-size: 400%;
-    color: #D5447E;
+    color: #000000;
     position: absolute;
 }
 .eficiencia {
@@ -137,7 +137,7 @@ body {
     left: 60%;
     -webkit-transform: translate(-50%, -50%) translateZ(4px) rotate(-5deg) scale(.25);
             transform: translate(-50%, -50%) translateZ(4px) rotate(-5deg) scale(.25);
-}
+?]/}
 .boas-praticas {
     top: 70%;
     left: 20%;
@@ -204,7 +204,7 @@ body {
     -webkit-transform-style: preserve-3d;
             transform-style: preserve-3d;
     position: relative;
-    background-image: linear-gradient(to bottom, #F00, #888 80%, #000); 
+    background-image: linear-gradient(to bottom, #000, #888 80%, #000); 
     background-size: 100% 200px;
     background-repeat: no-repeat;
 }
@@ -230,7 +230,7 @@ body {
 
     text-align: center;
     text-decoration: none;
-    background-color: #3C1D3D;
+    background-color: #CCCC;
     color: white;
     border: .25em solid black;
 
