@@ -13,7 +13,7 @@
 
 #define sensorR A1
 
-#define FW 55
+#define FW 10
 
 #define TR 70
 
