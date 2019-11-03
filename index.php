@@ -122,6 +122,29 @@
                 margin-right: 10px;
                 cursor: pointer;
             }
+            
+            .button {
+                display: inline-block;
+                padding: 15px 25px;
+                font-size: 24px;
+                cursor: pointer;
+                text-align: center;
+                text-decoration: none;
+                outline: none;
+                color: #fff;
+                background-color: #2585bc;
+                border: none;
+                border-radius: 15px;
+                box-shadow: 0 9px #999;
+            }
+              
+            .button:hover {background-color: #0E3A61}
+
+            .button:active {
+              background-color: #0E3A61;
+              box-shadow: 0 5px #666;
+              transform: translateY(4px);
+            }
                /*End-LightBox*/
         </style>
         
@@ -170,7 +193,8 @@
 
             <section class="secao-inicio saudacao">
                 <p class="saudacao"><span class="saudacao-inicio">Olá,</span> meu nome é <strong>Braia O'Conner</strong> <span class="saudacao-ultima-linha">sigo linhas de forma<em>VELOZ E FURIOSA</em></span></p>
-                <a class="botao-index" href="bio.html">Conheça mais um pouco sobre mim</a>
+                
+                <a href="bio.html"><button class="button">Conheça mais um pouco sobre mim</button></a>
             </section>
             <section class="secao-inicio trabalhos">
                 <h2>Principais Fotos</h2>
@@ -199,7 +223,7 @@
                 </div>
 
 <!------------------>
-                <a class="botao-index" href="portfolio.html">Veja mais</a>
+            <a href="portfolio.html"><button class="button">Veja mais</button></a>
             </section>
             <section class="secao-inicio blog">
                 <h2>Blog</h2>
@@ -218,7 +242,7 @@
                         <a href="blog.html">JavaScript não obstrusivo</a>
                     </li>
                 </ol>
-                <a class="botao-index" href="blog.html">Veja mais</a>
+                <a href="blog.html"><button class="button">Veja mais</button></a>
             </section>
         </main>
         <footer>

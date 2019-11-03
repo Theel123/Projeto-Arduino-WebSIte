@@ -50,7 +50,7 @@
     text-shadow: 5px 5px #000;
 }
 .trabalhos {
-    background-color: #2585bc;
+    background-color: #0e3a61;
     border-top: .5em solid #000;
     border-bottom: .5em solid #000;
     background-image: linear-gradient(135deg, transparent, transparent 14px, rgba(0,0,0,.1) 15px, transparent 15px, transparent);
@@ -137,7 +137,8 @@ body {
     left: 60%;
     -webkit-transform: translate(-50%, -50%) translateZ(4px) rotate(-5deg) scale(.25);
             transform: translate(-50%, -50%) translateZ(4px) rotate(-5deg) scale(.25);
-?]/}
+}
+
 .boas-praticas {
     top: 70%;
     left: 20%;
