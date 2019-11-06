@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Oh Braia!</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="shortcut icon" href="imagens/braia.jpg">
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/site.css">
@@ -12,8 +13,8 @@
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Shadows+Into+Light">
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>   
         <script type="text/javascript" src="js/lightslider.js"></script> 
-
         <script type="text/javascript">
 
            $(document).ready(function() {
@@ -56,10 +57,7 @@
                     });
                 });
             });
-
-
-        </script>
-
+</script>
         <style type="text/css">
     /*Slider*/
             ul{
@@ -155,14 +153,12 @@
                 <div class="close">X</div> 
                 <form action="index_submit" method="get" accept-charset="utf-8">
                     <pre>
-<!--
-                        <legend>Nossa NewsLetter</legend>
 
-                        <input type="" name=""/>
-                        <input type="" name=""/>
-                        <input type="" name=""/>
-                        <input type="button" name="" value="Assinar Newsletter"/>
--->
+    <div class="container">
+            
+                <button type="submit" class="btn btn-info">Buscar</button>
+    
+
                     </pre>
 
                 </form>

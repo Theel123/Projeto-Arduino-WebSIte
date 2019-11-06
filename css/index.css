@@ -60,12 +60,12 @@ body {
     box-shadow: 0 0 1em #000;
 }
 .secao-inicio {
-    padding: 2em;
+    padding: 1em;
 }
 .secao-inicio h2 {
     font-size: 3em;
     text-transform: uppercase;
-    margin-bottom: .5em;
+    margin-bottom: .em;
     text-shadow: 2px 2px #000;
 }
 .trabalhos {

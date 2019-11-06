@@ -3,45 +3,98 @@
 <head>
     <meta charset="utf-8">
     <title>Portfolio - Oh Braia</title>
-    <link rel="icon" href="imagens/favicon.png">
+    <link rel="shortcut icon" href="imagens/braia.jpg">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/site.css">
     <link rel="stylesheet" href="css/portfolio.css">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,600">
+    <link rel="stylesheet" type="text/css" href="css/visage.css"/>
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700">
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="js/jquery.visage.js"></script>
+    <script type="text/javascript">
+$.fn.loadImages = function (callback) {
+    var element = this;
+    $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?lang=en-us&format=json&jsoncallback=?", function (data, textStatus) {
+        $.each(data.items, function (i, item) {
+            var title = item.title;
+            var link = item.media.m.replace(/_m\.jpg$/, ".jpg");
+            var thumbnail = item.media.m.replace(/_m\.jpg$/, "_s.jpg");
+            $("<a/>").attr({
+                "href": link
+            }).append(
+                $("<img/>").attr({
+                    "src": thumbnail,
+                    "alt": title,
+                    "title": title
+                }).css({
+                    "margin": "2px",
+                    "border": "none",
+                    "vertical-align": "bottom"
+                })
+            ).appendTo(element);
+        });
+        callback();
+    });
+};
+$(document).ready(function () {
+    $("#images").loadImages(function () {
+        $("#images a").visage();
+    });
+    setTimeout(function () {
+        $("#images-alt").loadImages(function () {
+            $("#images-alt a").visage({
+                "files": {
+                    "blank": "imagens/blank.gif",
+                    "error": "imagens/error.png"
+                },
+                "attr": {
+                    "close": {"id": "visage-alt-close"},
+                    "title": {"id": "visage-alt-title"},
+                    "count": {"id": "visage-alt-count"},
+                    "container": {"id": "visage-alt-container"},
+                    "image": {"id": "visage-alt-image", "src": "imagens/blank.gif"},
+                    "visage": {"id": "visage-alt"},
+                    "overlay": {"id": "visage-alt-overlay"},
+                    "prev": {"id": "visage-alt-nav-prev"},
+                    "prev_disabled": {"id": "visage-alt-nav-prev"},
+                    "next": {"id": "visage-alt-nav-next"},
+                    "next_disabled": {"id": "visage-alt-nav-next"}
+                },
+                "enabledClass": "visage-alt-enabled",
+                "disabledNavClass": "visage-alt-nav-disabled",
+                "transitionResizeSpeed": 300, // Non-zero to show resize animation
+                "addDOM": function (visageDOM, options) {
+                    $.fn.visage.addDOM(visageDOM, options);
+                    // Moves elements to overlay so they are all in the same stacking context
+                    $(visageDOM.prev).add(visageDOM.next).add(visageDOM.count).add(visageDOM.title).appendTo(visageDOM.overlay);
+                },
+                // We move setting image source to preTransitionResize so that transition resize is also resizing the image
+                // (So that image is shown as soon as possible and we are not waiting for the resize to finish to display it)
+                "preTransitionResize": function (image, values, group, index, visageDOM, isStopping, finish, options) {
+                    $.fn.visage.preTransitionResize(image, values, group, index, visageDOM, isStopping, function () {}, options);
+                    visageDOM.image.attr("src", values.src);
+                    finish();
+                },
+                "postTransitionResize": function (image, values, group, index, visageDOM, isStopping, finish, options) {
+                    finish();
+                }
+            });
+        });
+    }, 2000);
+});
+</script>
 </head>
 <body>
     <main>
         <h1 class="titulo-principal">Portfolio</h1>
         <div class="container">
-            <p>Veja abaixo a lista dos meus projetos mais relevantes</p>
-            <ol class="portfolio">
-                <li><a href="http://bmw.com">
-                        <figure>
-                            <img src="imagens/bmw.png" alt="Site da BMW">
-                            <figcaption>BMW.com: reformulação de design e implementação de HTML, CSS e JavaScript</figcaption>
-                        </figure>
-                </a></li>
-                <li><a href="http://uol.com.br">
-                        <figure>
-                            <img src="imagens/uol.png" alt="Front-page da UOL">
-                            <figcaption>UOL.com.br: reformulação de design e implementação de HTML, CSS e JavaScript</figcaption>
-                        </figure>
-                </a></li>
-                <li><a href="http://www.ibm.com.br">
-                        <figure>
-                            <img src="imagens/ibm.png" alt="Site da IBM">
-                            <figcaption>IBM.com: aplicação de progressive enhancement em conjunto com aplicação back-end</figcaption>
-                        </figure>
-                </a></li>
-                <li><a href="http://g1.com.br">
-                        <figure>
-                            <img src="imagens/g1.png" alt="Front-page do portal G1">
-                            <figcaption>G1.com.br: reformulação de design e implementação de HTML, CSS e JavaScript</figcaption>
-                        </figure>
-                </a></li>
-            </ol>
+
+
+<h1>Galeria</h1>
+<div id="images-alt"></div>
         </div>
+
     </main>
     <img src="imagens/braia.jpg" alt="Minha foto" class="minha-foto">
     <aside class="navegacao-site">
