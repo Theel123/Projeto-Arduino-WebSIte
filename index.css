@@ -26,8 +26,8 @@ body {
 .saudacao em {
     color: #1292d7;
     font-size: 4em;
-    -webkit-transform: rotate(-5deg) skew(-5deg);
-            transform: rotate(-5deg) skew(-50deg);
+    -webkit-transform: rotate(-10deg) skew(-20deg);
+            transform: rotate(-10deg) skew(-20deg);
     display: inline-block;
     -webkit-animation: flutua 0.5s ease-in-out infinite;
             animation: flutua 0.5s ease-in-out infinite;
