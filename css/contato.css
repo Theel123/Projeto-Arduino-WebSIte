@@ -21,21 +21,21 @@ button {
     border: 0;
     padding: .5em 1em;
     font-family: "Open Sans Condensed", sans-serif;
-    background-color: #3C1D3D;
+    background-color:  #2585bc;
     color: white;
     font-size: 1.2em;
     margin-left: auto;
     margin-top: 1em;
 }
 input:invalid {
-    box-shadow: 0 0 3px red;
+    box-shadow: 0 0 3px #1292d7;
 }
 input:focus,
 textarea:focus {
     background-color: #FFD;
 }
 button:focus {
-    background-color: #8C1D3D;
+    background-color:  #000
 }
 input[value="Outro"] + input {
     display: none;
@@ -52,7 +52,7 @@ input[value="Outro"]:checked + input {
     position: absolute;
     width: 2em;
     height: 2em;
-    background-color: #8C1D3D;
+    background-color: #2585bc;
     background-size: 50% 50%;
     background-position: center center;
     background-repeat: no-repeat;
