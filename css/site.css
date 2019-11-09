@@ -125,28 +125,9 @@ em {
     font-style: italic;
 }
 
-.icones-redes-sociais li {
-    display: inline-block;
-}
 
-.icones-redes-sociais a {
-    width: 40px;
-    height: 40px;
-    display: block;
-    text-indent: -99999px;
-}
 
-.github {
-    background-image: url(../imagens/github.png);
-}
-
-.twitter {
-    background-image: url(../imagens/twitter.png);
-}
-
-.linkedin {
-    background-image: url(../imagens/linkedin.png);
-}
+/* Main das paginas */
 
 main {
     padding-bottom: 4em;
@@ -172,6 +153,23 @@ main {
     height: 150px;
 }
 
+
+
+
+/* Footer do site */
+footer {
+    background-color: #000;
+    color: #FFF;
+    padding: 2em;
+    font-size: 25px;
+}
+footer h2 {
+    font-size: 3em;
+}
+footer a {
+    color: #1292d7;
+}
+
 .icones-redes-sociais a {
     position: relative;
 }
@@ -179,7 +177,7 @@ main {
 .icones-redes-sociais a:hover::after,
 .icones-redes-sociais a:focus::after {
     content: attr(data-tooltip);
-    position: absolute;
+    position: relative;
     background: black;
     color: white;
     top: 100%;
@@ -194,22 +192,36 @@ main {
     content: '';
     position: absolute;
     bottom: 0;
-    left: 0;
+    right: 0;
+    margin-left: 30px;
     width: 1em;
     height: 1em;
     background-color: black;
     transform: translateY(.5em) rotate(45deg);
 }
-
-
-footer {
-    background-color: #000;
-    color: #FFF;
-    padding: 2em;
+.icones-redes-sociais li {
+    display: inline-block;
 }
-footer h2 {
-    font-size: 3em;
+
+.icones-redes-sociais a {
+    width: 40px;
+    height: 40px;
+    display: block;
+    text-indent: -99999px;
 }
-footer a {
-    color: #1292d7;
+
+.github {
+    background-image: url(../imagens/github.png);
+}
+
+.twitter {
+    background-image: url(../imagens/twitter.png);
+}
+
+.instagram {
+    background-image: url(../imagens/instagram.png);
+}
+
+.youtube {
+    background-image: url(../imagens/youtube.png);
 }

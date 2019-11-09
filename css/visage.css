@@ -108,7 +108,7 @@
 	right: 0px;
 	top: 0px;
 	height: 62px;
-	width: 62px;
+	width: 100px;
 	background: transparent url("../imagens/close.png") no-repeat scroll top right;
 	cursor: pointer;
 }
