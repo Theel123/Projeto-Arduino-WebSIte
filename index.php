@@ -2,7 +2,11 @@
 <html lang="pt">
     <head>
         <meta charset="UTF-8">
-        <title>Oh Braia!</title>
+        <title> Oh Braia! </title>
+        
+        <!-- REFERENCIA CSS -->
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="shortcut icon" href="imagens/braia.jpg">
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/site.css">
@@ -10,10 +14,14 @@
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,600">
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700">
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Shadows+Into+Light">
+        
+        <!-- REFERENCIA JS -->
+        
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>   
         <script type="text/javascript" src="js/lightslider.js"></script> 
-
+        
         <script type="text/javascript">
 
            $(document).ready(function() {
@@ -36,7 +44,7 @@
             });
 
             $(document).ready(function() {
-                $('.banner-twitter').click(function(){
+                $('.newsletter').click(function(){
                     $('.background, .box').animate({'opacity':'.60'}, 200, 'linear');
                     $('.box').animate({'opacity':'1.00'},200, 'linear');
                     $('.background, .box').css('display', 'block')
@@ -56,37 +64,37 @@
                     });
                 });
             });
-
-
         </script>
-
+        
         <style type="text/css">
-    /*Slider*/
-            ul{
+            /* SLIDER */
+            ul {
                 list-style: none outside none;
                 padding-left: 0;
                 margin: 0;
             }
-            .demo .item{
+            
+            .demo .item {
                 margin-bottom: 60px;
             }
-            .content-slider li{
+            
+            .content-slider li {
                 background-color: #000000;
                 text-align: center;
                 color: #FFF;
             }
+            
             .content-slider h3 {
                 margin: 0;
                 padding: 70px 0;
             }
-            .demo{
-
-            width: 100%;
-
+            
+            .demo {
+                width: 100%;
             }
-        /*End-Slider*/
+            /* FIM DO SLIDER */
 
-     /*LightBox*/
+            /* LightBox */
             .background {
                 position: absolute;
                 top: 0;
@@ -101,7 +109,7 @@
                 display: none;
             }
 
-            .box{
+            .box {
                 position: absolute;
                 top: 10%;
                 left: 20%;
@@ -117,85 +125,67 @@
                 display: none;
 
             }
+            
             .close {
                 float: right;
                 margin-right: 10px;
                 cursor: pointer;
             }
-            
-            .button {
-                display: inline-block;
-                padding: 15px 25px;
-                font-size: 24px;
-                cursor: pointer;
-                text-align: center;
-                text-decoration: none;
-                outline: none;
-                color: #fff;
-                background-color: #2585bc;
-                border: none;
-                border-radius: 15px;
-                box-shadow: 0 9px #999;
-            }
-              
-            .button:hover {background-color: #0E3A61}
-
-            .button:active {
-              background-color: #0E3A61;
-              box-shadow: 0 5px #666;
-              transform: translateY(4px);
-            }
-               /*End-LightBox*/
+            /* Fim do LightBox */
         </style>
-        
-        <link rel="stylesheet"  href="css/lightslider.css"/>
     </head>
     <body>
+        
         <header class="titulo-principal">
             <img class="foto-home" src="imagens/braia.jpg" alt="Foto"/>
-            <h1>Oh Braia!</h1>
+            <h1> Oh Braia! </h1>
             <p class="subtitulo-principal">Robo Segue Linha</p>
             <ul class="palavras-home">
-                <li class="palavra-home eficiencia">Arduino</li>
-                <li class="palavra-home boas-praticas">Boas práticas</li>
-                <li class="palavra-home codigo-limpo">Código limpo</li>
-                <li class="palavra-home css3">CSS3</li>
-                <li class="palavra-home html5">HTML5</li>
-                <li class="palavra-home javascript">JavaScript</li>
-                <li class="palavra-home acessibilidade">Acessibilidade</li>
-                <li class="palavra-home responsivo">Responsivo</li>
-                <li class="palavra-home otimizacoes">Otimizações</li>
-                <li class="palavra-home agilidade">Agilidade</li>
-                <li class="palavra-home design">Design</li>
+                <li class="palavra-home arduino" style="color: #e0c502;">Arduino</li>
+                <li class="palavra-home multimidia" style="color: #e0c502;">Multimidia</li>
+                <li class="palavra-home audio" style="color: #e0c502;">Áudio</li>
+                <li class="palavra-home autoria" style="color: #e0c502;">Autoria</li>
+                <li class="palavra-home html5" style="color: #e0c502;">HTML5</li>
+                <li class="palavra-home javascript" style="color: #e0c502;">JavaScript</li>
+                <li class="palavra-home videos" style="color: #e0c502;">Vídeo</li>
+                <li class="palavra-home animacoes" style="color: #e0c502;">Animações</li>
+                <li class="palavra-home projetos" style="color: #e0c502;">Projetos</li>
+                <li class="palavra-home imagens" style="color: #e0c502;">Imagens</li>
+                <li class="palavra-home css3" style="color: #e0c502;">CSS3</li>
             </ul>
         </header>
 
         <main>
-            <a class="banner-twitter"  href="#">NewsLetter</a>
+            <a class="newsletter"  href="#" onMouseOver="this.style.textDecoration='none';" onMouseOut="this.style.textDecoration='none';">NewsLetter</a>
             <div class="background"></div>
 
             <div class="box">
                 <div class="close">X</div> 
                 <form action="index_submit" method="get" accept-charset="utf-8">
-                    <pre>
-<!--
-                        <legend>Nossa NewsLetter</legend>
-
-                        <input type="" name=""/>
-                        <input type="" name=""/>
-                        <input type="" name=""/>
-                        <input type="button" name="" value="Assinar Newsletter"/>
--->
-                    </pre>
-
+                  
+                    <div class="container">
+            
+                        <button type="submit" class="btn btn-info">Buscar</button>
+                    
                 </form>
-            </div>
-
+            </div>    
+        </div>
+            
+            <nav id="menu">
+                <ul>
+                     <li><a href="index.php">Home</a></li>
+                     <li><a href="portfolio.html">Portfolio</a></li>
+                     <li><a href="bio.html">Sobre mim</a></li>
+                     <li><a href="blog.html">Blog</a></li>
+                     <li><a href="desenvolvedores.html">Desenvolvedores</a></li>
+                     <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
             <section class="secao-inicio saudacao">
                 <p class="saudacao"><span class="saudacao-inicio">Olá,</span> meu nome é <strong>Braia O'Conner</strong> <span class="saudacao-ultima-linha">sigo linhas de forma<em>VELOZ E FURIOSA</em></span></p>
-                
-                <a href="bio.html"><button class="button">Conheça mais um pouco sobre mim</button></a>
+                <a class="botao-index" href="bio.html" onMouseOver="this.style.textDecoration='none';" onMouseOut="this.style.textDecoration='none';">Acesse Nosso Guia de Desenvolvimento</a>
             </section>
+            
             <section class="secao-inicio trabalhos">
                 <h2>Principais Fotos</h2>
 
@@ -206,7 +196,7 @@
                         <div class="clearfix" >
                             <ul id="image-gallery" class="gallery list-unstyled cS-hidden">
                                 <?php 
-                                    $pasta = 'imagens/RoboArduino/';
+                                    $pasta = 'imagens/fotosSlider/';
                                     $arquivos = glob("$pasta{*.jpg,*.JPG,*.png,*.gif,*.bmp}", GLOB_BRACE);
 
                                     $i = 0;
@@ -222,8 +212,8 @@
                     </div>
                 </div>
 
-<!------------------>
-            <a href="portfolio.html"><button class="button">Veja mais</button></a>
+            <!------------------>
+                <a class="botao-index" href="portfolio.html" onMouseOver="this.style.textDecoration='none';" onMouseOut="this.style.textDecoration='none';">Acesse Nossa Galeria</a>
             </section>
             <section class="secao-inicio blog">
                 <h2>Blog</h2>
@@ -242,12 +232,34 @@
                         <a href="blog.html">JavaScript não obstrusivo</a>
                     </li>
                 </ol>
-                <a href="blog.html"><button class="button">Veja mais</button></a>
+                <a class="botao-index" href="blog.html" onMouseOver="this.style.textDecoration='none';" onMouseOut="this.style.textDecoration='none';">Visite nosso blog</a>
             </section>
         </main>
-        <footer>
+       <footer class="rodape-pagina">
             <h2>Vamos conversar?</h2>
-            <p>Você pode entrar em contato comigo <a href="contato.html">por e-mail</a> ou pelo telefone <a href="tel:+551234567890">(12) 3456-7890</a></p>
+            <p>Você pode nos contatar <a href="contato.html">por e-mail</a> ou pelo telefone <a href="tel:+55=1234">(12) 3456-7890</a></p>
+        <ul class="icones-redes-sociais">
+            <li>
+                <a href="https://github.com/Theel123/layoutSimples" target="_blank" class="github">
+                    Github
+                </a>
+            </li>
+            <li>
+                <a href="https://twitter.com/BraiaUnib" target="_blank" class="twitter">
+                    Twitter
+                </a>
+            </li>
+            <li>
+                <a href="https://br.linkedin.com/pub/joão-da-silva/32/4/508" class="youtube">
+                    Instagram
+                </a>
+            </li>
+            <li>
+                <a href="https://br.linkedin.com/pub/joão-da-silva/32/4/508" class="instagram">
+                    Youtube
+                </a>
+            </li>
+        </ul>
         </footer>
     </body>
 </html>
