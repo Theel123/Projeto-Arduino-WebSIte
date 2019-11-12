@@ -12,20 +12,20 @@ body {
     padding: 1em;
 }
 .saudacao-inicio {
-    font-size: 3em;
+    font-size: 4em;
     color: #889;
 }
 .saudacao-ultima-linha {
     text-align: right;
-    display: block;
+    /*display: block;*/
 }
 .saudacao strong {
-    font-size: 2em;
+    font-size: 3em;
     color: #000;
 }
 .saudacao em {
-    color: #1292d7;
-    font-size: 4em;
+    color: #0073b9;
+    font-size: 6em;
     -webkit-transform: rotate(-10deg) skew(-20deg);
             transform: rotate(-10deg) skew(-20deg);
     display: inline-block;
@@ -70,9 +70,9 @@ body {
     text-align: center;
 }
 .trabalhos {
-    background-color: #2585bc;
-    border-top: .5em solid #000;
-    border-bottom: .5em solid #000;
+    background-color: #0073b9;
+    /*border-top: .5em solid #000;
+    border-bottom: .5em solid #000;*/
     background-image: linear-gradient(135deg, transparent, transparent 14px, rgba(0,0,0,.1) 15px, transparent 15px, transparent);
     background-size: 20px 20px;
     background-attachment: fixed;
@@ -93,7 +93,7 @@ body {
     display: block;
 }
 .blog {
-    background-color: #c7a98b;
+    background-color: #F2FFFC;
     position: relative;
     background-image: linear-gradient(45deg, transparent, transparent 14px, rgba(255,255,255,.1) 14px, rgba(255,255,255,.1) 15px, transparent 15px, transparent);
     background-size: 20px 20px;
@@ -126,16 +126,16 @@ body {
     background-repeat: no-repeat;
     text-shadow: 1px 1px black;
     background-image: radial-gradient(ellipse at left bottom,
-        #1292d7,
-        #1292d7 65%,
-        black 65%,
-        black 70%,
+        #0322ff,
+        #0322ff 65%,
+        #0322ff 65%,
+        #0322ff 70%,
         transparent 70%);
     background-size: 25% 100%;
 }
 
 footer {
-    background-color: #000;
+    background-color: /*#000*/ #1292d7;
     color: #FFF;
     padding: 2em;
     font-size: 25px;
@@ -174,6 +174,7 @@ footer a {
     height: 1em;
     background-color: black;
     transform: translateY(.5em) rotate(45deg);
+    z-index: -10000;
 }
 .icones-redes-sociais li {
     display: inline-block;
@@ -350,7 +351,7 @@ body {
     height: 8em;
     left: 30%;
     right: 4em;
-    background-color: #ca940d;
+    background-color: #ffcb4b;
     color: #000;
     padding: 1.5em;
     display: none;
@@ -362,9 +363,11 @@ body {
 }
 .blog a:hover,
 .blog a:focus {
-    background-color: #ca940d;
-    color: #FFF;
-    border-radius: 20px;
+    background-color: #ffcb4b;
+    color: #000;
+    /*border-radius: 20px;*/
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
 }
 @-webkit-keyframes aparece {
     from {
@@ -401,7 +404,7 @@ body {
     margin:0px;
     background-color:#EDEDED;
     list-style:none;
-    border-bottom:8px solid #000;
+    /*border-bottom:8px solid #000;*/
     font-size: 25px;
     text-transform: uppercase;
     text-align: center;

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Guia de Desenvolvimento</title>
+    <title>Nossa Equipe</title>
     <link rel="icon" href="imagens/braia.jpg">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/site.css">
@@ -13,7 +13,7 @@
 </head>
 <body>
     <main>
-        <h1 class="titulo-principal">Guia de Desenvolvimento</h1>
+        <h1 class="titulo-principal">Nossa Equipe</h1>
         <div class="container">
             <p>Moro em São Paulo mas atendo clientes do mundo todo. Sou conhecido por fazer produtos de <em>qualidade</em>, <em>durabilidade</em> e que <em>agregam valor</em> para meus clientes.</p>
             <p>Trabalho usando a web como plataforma, ou seja, respiro HTML5, CSS3 e JavaScript (ou melhor: ECMASCript). Crio sites para todos, seguindo as principais diretivas de <strong>acessibilidade, responsividade e web semântica</strong>, sem descuidar da qualidade de código.</p>
@@ -32,7 +32,7 @@
             <p>Já desenvolvi projetos para grandes empresas como <a href="http://bmw.com">BMW</a>, <a href="http://www.uol.com.br">UOL</a> e <a href="http://www.ibm.com.br">IBM</a>. Neles, o foco principal era entregar uma experiência imersiva e impactante para o usuário final sem descuidar do desempenho e da acessibilidade da página.</p>
             <p>Também já fui contratado para transformar grandes portais, como Terra e G1, em páginas responsivas. Fui responsável por renovar o layout, reorganizar o conteúdo e re-escrever o código de forma mais reaproveitável.</p>
             <h2 class="subtitulo-texto">Comunidade</h2>
-            <p>Procuro repassar meu conhecimento para a comunidade. Para isso, já dei <a href="portfolio.html">diversas palestras</a> e mantenho um <a href="blog.html">blog</a>.</p>
+            <p>Procuro repassar meu conhecimento para a comunidade. Para isso, já dei <a href="portfolio.php">diversas palestras</a> e mantenho um <a href="blog.php">blog</a>.</p>
         </div>
     </main>
     <img src="imagens/braia.jpg" alt="Minha foto" class="minha-foto">
@@ -40,19 +40,19 @@
         <h1>Oh Braia</h1>
         <nav>
             <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="bio.html">Sobre mim</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="desenvolvedores.html">Desenvolvedores</a></li>
-                <li><a href="contato.html">Contato</a></li>
+                <li><a href="index.php">Início</a></li>
+                <li><a href="portfolio.php">Mídias</a></li>
+                <li><a href="bio.php">Equipe</a></li>
+                <li><a href="blog.php">Blog</a></li>
+                <li><a href="desenvolvedores.php">Funções</a></li>
+                <li><a href="contato.php">Contato</a></li>
 
             </ul>
         </nav>
     </aside>
     <footer class="rodape-pagina">
             <h2>Vamos conversar?</h2>
-            <p>Você pode nos contatar <a href="contato.html">por e-mail</a> ou pelo telefone <a href="tel:+55=1234">(12) 3456-7890</a></p>
+            <p style="FONT-WEIGHT: bold; FONT-FAMILY: cursive;">VOCÊ PODE NOS CONTATAR <span style="color: #ffcb4b"> POR E-MAIL </span> CDC.UNIB@GMAIL.COM </p>
           <ul class="icones-redes-sociais">
        <li>
                 <a href="https://github.com/Theel123/layoutSimples" target="_blank" class="github">
@@ -65,13 +65,13 @@
                 </a>
             </li>
             <li>
-                <a href="https://br.linkedin.com/pub/joão-da-silva/32/4/508" class="youtube">
-                    Instagram
+                <a href="https://www.youtube.com/channel/UC_ygpg8nRycLi1jnTpXZH6w" target="_blank" class="youtube">
+                    Youtube
                 </a>
             </li>
             <li>
-                <a href="https://br.linkedin.com/pub/joão-da-silva/32/4/508" class="instagram">
-                    Youtube
+                <a href="https://instagram.com/" target="_blank" class="instagram">
+                   Instagram
                 </a>
             </li>
         </ul>

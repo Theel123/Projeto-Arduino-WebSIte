@@ -49,12 +49,12 @@
         <h1>OH BRAIA</h1>
         <nav>
             <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="bio.html">Sobre mim</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="desenvolvedores.html">Desenvolvedores</a></li>
-                <li><a href="contato.html">Contato</a></li>
+                <li><a href="index.php">Início</a></li>
+                <li><a href="portfolio.php">Mídias</a></li>
+                <li><a href="bio.php">Equipe</a></li>
+                <li><a href="blog.php">Blog</a></li>
+                <li><a href="desenvolvedores.php">Funções</a></li>
+                <li><a href="contato.php">Contato</a></li>
 
             </ul>
         </nav>
@@ -62,7 +62,7 @@
     </aside>
      <footer class="rodape-pagina">
             <h2>Vamos conversar?</h2>
-            <p>Você pode nos contatar <a href="contato.html">por e-mail</a> ou pelo telefone <a href="tel:+55=1234">(12) 3456-7890</a></p>
+            <p style="FONT-WEIGHT: bold; FONT-FAMILY: cursive;">VOCÊ PODE NOS CONTATAR <span style="color: #ffcb4b"> POR E-MAIL </span> CDC.UNIB@GMAIL.COM </p>
         <ul class="icones-redes-sociais">
        <li>
                 <a href="https://github.com/Theel123/layoutSimples" target="_blank" class="github">
@@ -75,13 +75,13 @@
                 </a>
             </li>
             <li>
-                <a href="https://br.linkedin.com/pub/joão-da-silva/32/4/508" class="youtube">
-                    Instagram
+                <a href="https://www.youtube.com/channel/UC_ygpg8nRycLi1jnTpXZH6w" target="_blank" class="youtube">
+                    Youtube
                 </a>
             </li>
             <li>
-                <a href="https://br.linkedin.com/pub/joão-da-silva/32/4/508" class="instagram">
-                    Youtube
+                <a href="https://instagram.com/" target="_blank" class="instagram">
+                   Instagram
                 </a>
             </li>
         </ul>

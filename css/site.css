@@ -24,7 +24,7 @@ h1 {
     background-color: #0073b9;
     color: #FFF;
     padding: 2rem;
-    border-bottom: .5rem solid #000;
+    /*border-bottom: .5rem solid #000;*/
 }
 
 .subtitulo-texto {
@@ -198,6 +198,7 @@ footer a {
     height: 1em;
     background-color: black;
     transform: translateY(.5em) rotate(45deg);
+    z-index: -10000;
 }
 .icones-redes-sociais li {
     display: inline-block;
