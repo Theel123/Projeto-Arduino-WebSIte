@@ -26,8 +26,8 @@
                     gallery:true,
                     item:1,
                     thumbItem:9,
-                    slideMargin: 0,
-                    speed:500,
+                    slideMargin: 7,
+                    speed:800,
                     auto:true,
                     loop:true,
                     onSliderLoad: function() {
@@ -58,7 +58,7 @@
                 });
             });
 </script>
-        <style type="text/css">
+<style type="text/css">
     /*Slider*/
             ul{
                 list-style: none outside none;
@@ -66,7 +66,7 @@
                 margin: 0;
             }
             .demo .item{
-                margin-bottom: 60px;
+                margin-bottom: 40px;
             }
             .content-slider li{
                 background-color: #000000;
@@ -79,12 +79,12 @@
             }
             .demo{
 
-            width: 100%;
-
+	            width: 100%;
+	            height:100%;
             }
         /*End-Slider*/
 
-     /*LightBox*/
+        /*LightBox*/
             .background {
                 position: absolute;
                 top: 0;
@@ -101,7 +101,8 @@
 
             .box{
                 position: absolute;
-                top: 10%;
+                align-content:center;
+                 top: 10%;
                 left: 20%;
                 width: 750px;
                 height: 550px;
@@ -162,12 +163,12 @@
         </div>
             <nav id="menu">
                 <ul>
-                     <li><a href="index.php">Home</a></li>
-                     <li><a href="portfolio.html">Portfolio</a></li>
-                     <li><a href="bio.html">Sobre mim</a></li>
-                     <li><a href="blog.html">Blog</a></li>
-                     <li><a href="desenvolvedores.html">Desenvolvedores</a></li>
-                     <li><a href="contato.html">Contato</a></li>
+                     <li><a OnCLick="this.style.backgroundColor='red';" href="index.php">Home</a></li>
+                     <li><a OnCLick="this.style.backgroundColor='red';" href="portfolio.html">Portfolio</a></li>
+                     <li><a OnCLick="this.style.backgroundColor='red';" href="bio.html">Guia Dev</a></li>
+                     <li><a OnCLick="this.style.backgroundColor='red';" href="blog.html">Blog</a></li>
+                     <li><a OnCLick="this.style.backgroundColor='red';" href="desenvolvedores.html">Desenvolvedores</a></li>
+                     <li><a OnCLick="this.style.backgroundColor='red';" href="contato.html">Contato</a></li>
                 </ul>
             </nav>
             <section class="secao-inicio saudacao">
@@ -224,11 +225,11 @@
                 <a class="botao-index" href="blog.html">Visite nosso blog</a>
             </section>
         </main>
-       <footer class="rodape-pagina">
+           <footer class="rodape-pagina">
             <h2>Vamos conversar?</h2>
             <p>Você pode nos contatar <a href="contato.html">por e-mail</a> ou pelo telefone <a href="tel:+55=1234">(12) 3456-7890</a></p>
-        <ul class="icones-redes-sociais">
-            <li>
+          <ul class="icones-redes-sociais">
+       <li>
                 <a href="https://github.com/Theel123/layoutSimples" target="_blank" class="github">
                     Github
                 </a>

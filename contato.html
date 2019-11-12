@@ -9,11 +9,44 @@
     <link rel="stylesheet" href="css/contato.css">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,600">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700">
+       <script>
+// Initialize and add the map
+function initMap() {
+  // The location of Uluru
+  // -, -
+  var university = {lat: -23.664373, lng: -46.678076};
+  // The map, centered at Uluru
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 18, center: university});
+  // The marker, positioned at Uluru
+  var marker = new google.maps.Marker({position: university, map: map});
+}
+    </script>
+    <!--Load the API from the specified URL
+    * The async attribute allows the browser to render the page while the API loads
+    * The key parameter will contain your own API key (which is not needed for this tutorial)
+    * The callback parameter executes the initMap() function
+    -->
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgOt9zEeHXLscZTkCdK4fQZG6mQvCXPJk&callback=initMap">
+    </script>
+</script>
 </head>
 <body>
     <main>
         <h1 class="titulo-principal">Contato</h1>
+               <nav id="menu">
+                <ul>
+                     <li><a OnCLick="this.style.backgroundColor='red';" href="index.php">Home</a></li>
+                     <li><a OnCLick="this.style.backgroundColor='red';" href="portfolio.html">Portfolio</a></li>
+                     <li><a OnCLick="this.style.backgroundColor='red';" href="bio.html">Guia Dev</a></li>
+                     <li><a OnCLick="this.style.backgroundColor='red';" href="blog.html">Blog</a></li>
+                     <li><a OnCLick="this.style.backgroundColor='red';" href="desenvolvedores.html">Desenvolvedores</a></li>
+                     <li><a OnCLick="this.style.backgroundColor='red';" href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
         <div class="container">
+            <div id="map" style="width:100%;height:400px"></div>
             <form>
                 <fieldset>
                     <legend>Seus dados</legend>
@@ -45,21 +78,10 @@
         </div>
     </main>
         <img src="imagens/braia.jpg" alt="Minha foto" class="minha-foto">
-    <aside class="navegacao-site">
-        <h1>OH BRAIA</h1>
-        <nav>
-            <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="bio.html">Sobre mim</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="desenvolvedores.html">Desenvolvedores</a></li>
-                <li><a href="contato.html">Contato</a></li>
-
-            </ul>
-        </nav>
+  
+    
        
-    </aside>
+
      <footer class="rodape-pagina">
             <h2>Vamos conversar?</h2>
             <p>Você pode nos contatar <a href="contato.html">por e-mail</a> ou pelo telefone <a href="tel:+55=1234">(12) 3456-7890</a></p>

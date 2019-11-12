@@ -48,46 +48,6 @@ main p {
     margin: 1em 0;
 }
 
-.navegacao-site {
-    text-align: center;
-    display: inline-block;
-    background-color: #6a7181;
-    color: #F2FFFC;
- 
-}
-
-.navegacao-site a {
-    color: inherit;
-    font-family: "Open Sans Condensed", "Arial", sans-serif;
-    text-transform: uppercase;
-}
-
-.navegacao-site a:hover,
-.navegacao-site a:focus {
-    text-shadow: 0 0 2px #6a7181;
-    background-color:#D6D6D6;
-    border-bottom:3px solid #02632E;
-}
-
-.navegacao-site h1 {
-    font-size: 1.5em;
-    margin-bottom: 1em;
-}
-
-
-#menu ul li { display: inline; }
-
-#menu ul li a {
-    padding: 2px 10px;
-    display: inline-block;
-
-    /* visual do link */
-    background-color:#EDEDED;
-    color: #333;
-    text-decoration: none;
-    border-bottom:3px solid #EDEDED;
-    align-content: center;
-}
 
 
 .rodape-pagina {
@@ -115,6 +75,7 @@ main p {
     margin-left: auto;
     margin-right: auto;
     padding: 1.5em 0;
+    margin-top: 20px;
 }
 
 strong {
@@ -132,18 +93,6 @@ em {
 main {
     padding-bottom: 4em;
     flex-grow: 1;
-}
-
-.minha-foto,
-.navegacao-site {
-    border-right: .5em solid black;
-    box-sizing: border-box;
-
-}
-
-.navegacao-site {
-    width: calc(0.9 * 300px);
-    padding-top: calc(300px + 1em);
 }
 
 .minha-foto {
@@ -224,4 +173,38 @@ footer a {
 
 .youtube {
     background-image: url(../imagens/youtube.png);
+}
+
+
+#menu ul {
+    padding:2px;
+    margin:0px;
+    background-color:#EDEDED;
+    list-style:none;
+    border-bottom:8px solid #000;
+    font-size: 25px;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#menu ul li { display: inline; }
+
+#menu ul li a {
+    padding: 2px 10px;
+    display: inline-block;
+    /* visual do link */
+    background-color:#EDEDED;
+    color: #333;
+    text-decoration: none;
+    border-bottom:5px solid #02632E;
+}
+
+
+#menu ul li a:hover {
+    background-color:#D6D6D6;
+    color: #6D6D6D;
+    border-bottom:5px solid #EA0000;
 }
