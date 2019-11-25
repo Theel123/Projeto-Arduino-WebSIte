@@ -97,11 +97,42 @@ main {
 
 .minha-foto {
   
+
     position: absolute;
     top: 0;
+    margin: 2px;
+    border-radius: 50%;
     height: 150px;
+      animation: pulse 0.7s infinite;
+  display: table;
+  animation-direction: alternate;
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+
 }
 
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+    -webkit-filter: brightness(100%);
+  }
+  100% {
+    -webkit-transform: scale(1.1);
+    -webkit-filter: brightness(200%);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    filter: brightness(100%);
+  }
+  100% {
+    transform: scale(1.1);
+    filter: brightness(200%);
+  }
+}
 
 
 
@@ -208,3 +239,5 @@ footer a {
     color: #6D6D6D;
     border-bottom:5px solid #EA0000;
 }
+
+    

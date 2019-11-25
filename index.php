@@ -2,7 +2,7 @@
 <html lang="pt">
     <head>
         <meta charset="UTF-8">
-        <title>Oh Braia!</title>
+        <title id="title">Oh Braia!</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="shortcut icon" href="imagens/braia.jpg">
         <link rel="stylesheet" href="css/reset.css">
@@ -11,12 +11,12 @@
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,600">
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700">
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Shadows+Into+Light">
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>   
+        <script type="text/javascript" src="https://unpkg.com/axios/dist/axios.min.js"></script>    
         <script type="text/javascript" src="js/lightslider.js"></script> 
         <script type="text/javascript">
-
+        /* Slider */
            $(document).ready(function() {
                 $("#content-slider").lightSlider({
                     loop:true,
@@ -35,7 +35,9 @@
                     }  
                 });
             });
+           /*  End Slider */
 
+            /*  LightBox */
             $(document).ready(function() {
                 $('.newsletter').click(function(){
                     $('.background, .box').animate({'opacity':'.60'}, 200, 'linear');
@@ -57,6 +59,80 @@
                     });
                 });
             });
+            /*  End LightBox */
+            function searchCep () {
+                // Inicia o preloader
+                startPreloader ()
+                // Recupera o value do input cep
+                let cep = document.getElementById('cep').value
+                // Inicia requisição AJAX com o axios
+                axios.get(`http://api.postmon.com.br/v1/cep/${cep}`)
+                        .then(response => {
+                            showResults (response.data)
+                        })
+                        .catch(error => {
+                            // console.log(error)
+                            // Mostra a div com o erro
+                            document.getElementById('error').style.display = 'block'
+                            // Mostra a mensagem
+                            document.getElementById('error').innerHTML = 'Erro inesperado'
+                        })
+                        .finally(() => endPreloader ())
+                event.preventDefault()
+            }
+                    function showResults (address) {
+                        // Mostra a div com o resultado
+                        document.getElementById('results').style.display = 'block'
+                        // Mostra os resultados:
+                        document.getElementById('results').innerHTML = `
+                            <p><b>Bairro: </b> ${address.bairro} </p>
+                            <p><b>Cidade: </b> ${address.cidade} </p>
+                            <p><b>Logradouro: </b> ${address.logradouro} </p>
+                            <p><b>Cep: </b> ${address.cep} </p>
+                        `
+                    }
+                    function startPreloader () {
+                        // Exibe a div de preloader
+                        document.getElementById('preloader').style.display = 'block'
+                        // Limpa os dados do resultado:
+                        document.getElementById('results').innerHTML = ''
+                        // Oculta a div com o resultado
+                        document.getElementById('results').style.display = 'none'
+                        // Oculta a div com o erro
+                        document.getElementById('error').style.display = 'none'
+                    }
+                    function endPreloader () {
+                        // Oculta a div de preloader
+                        document.getElementById('preloader').style.display = 'none'
+                    }
+
+                //Criando elemento
+                var slide = $('#carousel').bootstrapDynamicCarousel({
+                    indicators: false
+                });
+                    
+                //Adicionando imagens
+                slide.addItem({
+                    id: 'myID',
+                    type: 'image',
+                    url: 'http://clubedosgeeks.com.br/wp-content/uploads/2015/11/dynamic.fw_-1270x7931-720x340.png',
+                    href: 'http://clubedosgeeks.com.br/web-design/jquery/abas-dinamicas-com-boostrap-abrir-fechar-e-arrastar',
+                    caption: 'Plugin to add, remove and move Bootstrap tabs',
+                    captionTag: 'h3',
+                    active: true
+                });
+                 
+                //Adicionando vídeo do youtube
+                slide.addItem({
+                    type: 'youtube',
+                    url: 'https://www.youtube.com/watch?v=uWPMevZbn-s'
+                });
+                    
+                //adicionando vídeo do VIMEO
+                slide.addItem({
+                    type: 'vimeo',
+                    url: 'https://vimeo.com/76979871'
+                });
 </script>
 <style type="text/css">
     /*Slider*/
@@ -122,15 +198,18 @@
                 cursor: pointer;
             }
                /*End-LightBox*/
+
+
+     
         </style>
         
         <link rel="stylesheet"  href="css/lightslider.css"/>
     </head>
     <body>
         <header class="titulo-principal">
-            <img class="foto-home" src="imagens/braia.jpg" alt="Foto"/>
-            <h1>Oh Braia!</h1>
-            <p class="subtitulo-principal">Robo Segue Linha</p>
+  <img src="imagens/braia.jpg" class="foto-home">
+	<h1>Robô Segue Linha</h1>
+
             <ul class="palavras-home">
                 <li class="palavra-home arduino">Arduino</li>
                 <li class="palavra-home multimidia">Multimidia</li>
@@ -146,21 +225,42 @@
             </ul>
         </header>
 
+  
         <main>
             <a class="newsletter"  href="#">NewsLetter</a>
             <div class="background"></div>
 
             <div class="box">
                 <div class="close">X</div> 
-                <form action="index_submit" method="get" accept-charset="utf-8">
-                  
-            <div class="container">
-            
-                <button type="submit" class="btn btn-info">Buscar</button>
-                    
-                </form>
-            </div>    
+        <div class="axios">
+            <h1>Receba nossa NewsLetter</h1>
+
+            <form id="form-cep" method="post" action="newsletter.php" class="form form-inline">
+
+                <input type="text" name="nome" id="nome" placeholder="Informe seu nome "class="form-control">
+                <input type="text" name="email" id="email" placeholder="Informe seu Email" class="form-control">
+                <input type="text" name="cep" id="cep" placeholder="Informe o cep" class="form-control">
+                <button type="button" class="btn btn-info" onclick="searchCep()">Buscar</button>
+                <button type="submit" class="btn btn-info">Receber</button>
+
+            </form>
         </div>
+
+                 
+
+
+        </div>
+
+
+            <div id="error" style="display: none;" class="alert alert-danger"></div>
+
+            <div id="preloader" style="display: none;" class="alert alert-info">
+                Carregando...
+            </div>
+
+            <div id="results" style="display: none;"></div>
+        </div><!--Container-->
+            </div>
             <nav id="menu">
                 <ul>
                      <li><a OnCLick="this.style.backgroundColor='red';" href="index.php">Home</a></li>
@@ -171,9 +271,13 @@
                      <li><a OnCLick="this.style.backgroundColor='red';" href="contato.html">Contato</a></li>
                 </ul>
             </nav>
+
             <section class="secao-inicio saudacao">
-                <p class="saudacao"><span class="saudacao-inicio">Olá,</span> meu nome é <strong>Braia O'Conner</strong> <span class="saudacao-ultima-linha">sigo linhas de forma<em>VELOZ E FURIOSA</em></span></p>
-                <a class="botao-index" href="bio.html">Acesse Nosso Guia de Desenvolvimento</a>
+	  
+
+
+    </div>
+			   <span >sigo linhas de forma<em>THE FAST AND THE FURIOUS</em></span></p>
             </section>
             
             <section class="secao-inicio trabalhos">
@@ -191,6 +295,7 @@
 
                                     $i = 0;
                                     foreach($arquivos as $img){
+
 
                                         echo '<li data-thumb='.$img.'><img src='.$img.'></li>';
 
@@ -250,6 +355,11 @@
                 </a>
             </li>
         </ul>
+
+<div class="g-ytsubscribe" data-channel="GoogleDevelopers" data-layout="full" data-theme="dark" data-count="default"></div>
         </footer>
+
+      
     </body>
+    
 </html>
