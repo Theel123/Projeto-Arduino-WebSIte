@@ -176,7 +176,16 @@
 	font-weight: bold;
 	z-index: 2;
 }
-
+.rvs-container a.rvs-play-video {
+	top: 50%;
+	left: 50%;
+	width: 60px;
+	height: 60px;
+	font-size: 32px;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	-ms-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+}
 .rvs-container .rvs-player:hover a.rvs-close,
 .rvs-container .rvs-active a.rvs-play-video {
 	opacity: 1;

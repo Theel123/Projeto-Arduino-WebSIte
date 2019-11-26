@@ -264,9 +264,8 @@
             <nav id="menu">
                 <ul>
                      <li><a OnCLick="this.style.backgroundColor='red';" href="index.php">Home</a></li>
-                     <li><a OnCLick="this.style.backgroundColor='red';" href="portfolio.html">Portfolio</a></li>
+                     <li><a OnCLick="this.style.backgroundColor='red';" href="portfolio.php">Portfolio</a></li>
                      <li><a OnCLick="this.style.backgroundColor='red';" href="bio.html">Guia Dev</a></li>
-                     <li><a OnCLick="this.style.backgroundColor='red';" href="blog.html">Blog</a></li>
                      <li><a OnCLick="this.style.backgroundColor='red';" href="desenvolvedores.html">Desenvolvedores</a></li>
                      <li><a OnCLick="this.style.backgroundColor='red';" href="contato.html">Contato</a></li>
                 </ul>
@@ -315,19 +314,30 @@
                 <small>Últimos posts</small>
                 <ol>
                     <li class="mais-recente">
-                        <a href="blog.html">O essencial de design responsivo</a>
+                        <a href="https://ohbraiaunib.blogspot.com/2019/09/terceira-dimensao-realidade-aumentada.html" target="_blank" >Terceira Dimensão , Realidade Aumentada </a>
                         <p class="inicio-post">
-                            Design responsivo tem ganho cada vez mais atenção como técnica de desenvolvimento de páginas web para dispositivos móveis. Mas como começar?
+                       Pokémon Go  usa realidade aumentada para levar personagens da Nintendo ao mundo real, mas de forma virtual.
+
+                    Basicamente, o jogo funciona por meio da câmera, que coloca, na imagem que você vê através dela, criando vários pokémons virtuais no ambiente real. Para efeito de comparação, vale a menção do Snapchat, que põe sobre os rostos dos usuários acessórios virtuais.
+
+
+                        </p>
+                    </li>
+
+                    <li>
+                        <a href="https://ohbraiaunib.blogspot.com/2019/09/os-desenhos-vetorizacao-capitulo-6.html" target="_blank" >Vetorização</a>
+                         <p class="inicio-post">
+                            Desenhos vetoriais são imagens que utilizam formas geométricas primitivas, como linhas, curvas, pontos, formas e polígonos, como base de sua construção. Todos estes elementos são baseados em fórmulas matemáticas específicas para serem construídos.
                         </p>
                     </li>
                     <li>
-                        <a href="blog.html">Por que fazer páginas acessíveis?</a>
-                    </li>
-                    <li>
-                        <a href="blog.html">JavaScript não obstrusivo</a>
+                        <a href="https://ohbraiaunib.blogspot.com/2019/10/o-audio-som-binaural-capitulo-9.html" target="_blank" >Audio Binaural</a>
+                         <p class="inicio-post">
+                            O que são frequências binaurais?
+                        </p>
                     </li>
                 </ol>
-                <a class="botao-index" href="blog.html">Visite nosso blog</a>
+                <a class="botao-index" href="https://ohbraiaunib.blogspot.com/" target="_blank">Visite nosso blog</a>
             </section>
         </main>
            <footer class="rodape-pagina">
@@ -340,23 +350,24 @@
                 </a>
             </li>
             <li>
-                <a href="https://twitter.com/BraiaUnib" target="_blank" class="twitter">
+                <a href="https://twitter.com/BraiaUnib?s=08" target="_blank" class="twitter">
                     Twitter
                 </a>
             </li>
             <li>
-                <a href="https://br.linkedin.com/pub/joão-da-silva/32/4/508" class="youtube">
-                    Instagram
+                <a href=" https://www.youtube.com/channel/UC9Cl5w1ASiqc-5rHoH7kgoQ?view_as=subscriber"target="_blank"  class="youtube">
+                    Youtube
+
                 </a>
             </li>
+
             <li>
-                <a href="https://br.linkedin.com/pub/joão-da-silva/32/4/508" class="instagram">
-                    Youtube
+                <a href=" https://www.instagram.com/ohbraia?r=nametag" target="_blank"  class="instagram">
+                    Instagram
                 </a>
             </li>
         </ul>
 
-<div class="g-ytsubscribe" data-channel="GoogleDevelopers" data-layout="full" data-theme="dark" data-count="default"></div>
         </footer>
 
       
