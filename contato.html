@@ -10,6 +10,32 @@
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,600">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700">
        <script>
+
+        function alerta() 
+        {  
+
+            var nome = document.getElementById('nome');
+            var email = document.getElementById('email');
+
+            if(nome.value == ""){
+
+                alert('favor preecher o nome');
+                return false;
+            }
+         
+            if(email.value == ""){
+
+                 alert('favor preecher o email');
+                 return false;
+
+            }
+             else {
+
+                alert('Email Enviado com Sucesso');
+            }
+
+      }
+        
 // Initialize and add the map
 function initMap() {
   // The location of Uluru
@@ -50,9 +76,9 @@ function initMap() {
                 <fieldset>
                     <legend>Seus dados</legend>
                     <label class="com-icone" for="nome">Nome completo</label>
-                    <input id="nome" type="text" name="nome" required autofocus pattern="[A-Za-z ']{4,}" title="O nome precisa ter pelo menos 4 caracteres">
+                    <input id="nome" type="text" name="nome"  autofocus pattern="[A-Za-z ']{4,}" title="O nome precisa ter pelo menos 4 caracteres">
                     <label class="com-icone" for="email">E-mail</label>
-                    <input id="email" type="email" name="email" required placeholder="seu@email.com">
+                    <input id="email" type="email" name="email"  placeholder="seu@email.com">
                 </fieldset>
                 <fieldset>
                     <legend>Assunto</legend>
@@ -72,7 +98,7 @@ function initMap() {
                 </fieldset>
                 <label for="mensagem">Mensagem</label>
                 <textarea id="mensagem" name="mensagem" cols="60" rows="10" placeholder="Digite aqui sua mensagem"></textarea>
-                <button type="submit">Enviar mensagem</button>
+                <button onclick="alerta()" type="button">Enviar mensagem</button>
             </form>
         </div>
     </main>

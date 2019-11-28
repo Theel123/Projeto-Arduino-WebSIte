@@ -3,7 +3,6 @@
     <head>
         <meta charset="UTF-8">
         <title id="title">Oh Braia!</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="shortcut icon" href="imagens/braia.jpg">
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/site.css">
@@ -13,8 +12,9 @@
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Shadows+Into+Light">
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
-        <script type="text/javascript" src="https://unpkg.com/axios/dist/axios.min.js"></script>    
         <script type="text/javascript" src="js/lightslider.js"></script> 
+        <script src="js/fire.js"></script>
+
         <script type="text/javascript">
         /* Slider */
            $(document).ready(function() {
@@ -60,51 +60,7 @@
                 });
             });
             /*  End LightBox */
-            function searchCep () {
-                // Inicia o preloader
-                startPreloader ()
-                // Recupera o value do input cep
-                let cep = document.getElementById('cep').value
-                // Inicia requisição AJAX com o axios
-                axios.get(`http://api.postmon.com.br/v1/cep/${cep}`)
-                        .then(response => {
-                            showResults (response.data)
-                        })
-                        .catch(error => {
-                            // console.log(error)
-                            // Mostra a div com o erro
-                            document.getElementById('error').style.display = 'block'
-                            // Mostra a mensagem
-                            document.getElementById('error').innerHTML = 'Erro inesperado'
-                        })
-                        .finally(() => endPreloader ())
-                event.preventDefault()
-            }
-                    function showResults (address) {
-                        // Mostra a div com o resultado
-                        document.getElementById('results').style.display = 'block'
-                        // Mostra os resultados:
-                        document.getElementById('results').innerHTML = `
-                            <p><b>Bairro: </b> ${address.bairro} </p>
-                            <p><b>Cidade: </b> ${address.cidade} </p>
-                            <p><b>Logradouro: </b> ${address.logradouro} </p>
-                            <p><b>Cep: </b> ${address.cep} </p>
-                        `
-                    }
-                    function startPreloader () {
-                        // Exibe a div de preloader
-                        document.getElementById('preloader').style.display = 'block'
-                        // Limpa os dados do resultado:
-                        document.getElementById('results').innerHTML = ''
-                        // Oculta a div com o resultado
-                        document.getElementById('results').style.display = 'none'
-                        // Oculta a div com o erro
-                        document.getElementById('error').style.display = 'none'
-                    }
-                    function endPreloader () {
-                        // Oculta a div de preloader
-                        document.getElementById('preloader').style.display = 'none'
-                    }
+            
 
                 //Criando elemento
                 var slide = $('#carousel').bootstrapDynamicCarousel({
@@ -133,6 +89,158 @@
                     type: 'vimeo',
                     url: 'https://vimeo.com/76979871'
                 });
+
+
+(function() {
+    var lastTime = 0;
+    var vendors = ['ms', 'moz', 'webkit', 'o'];
+    for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+        window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
+        window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame'] 
+                                   || window[vendors[x]+'CancelRequestAnimationFrame'];
+    }
+ 
+    if (!window.requestAnimationFrame)
+        window.requestAnimationFrame = function(callback, element) {
+            var currTime = new Date().getTime();
+            var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+            var id = window.setTimeout(function() { callback(currTime + timeToCall); }, 
+              timeToCall);
+            lastTime = currTime + timeToCall;
+            return id;
+        };
+ 
+    if (!window.cancelAnimationFrame)
+        window.cancelAnimationFrame = function(id) {
+            clearTimeout(id);
+        };
+}());
+
+
+(function() {
+
+    // Get the buttons.
+    var startBtn = document.getElementById('button');
+  /*var resetBtn = document.getElementById('resetBtn');*/
+    // A variable to store the requestID.
+    var requestID;
+    // Canvas
+    var canvas = document.getElementById('canvas');
+    // 2d Drawing Context.
+    var ctx = canvas.getContext('2d');
+
+    // Variables to for the drawing position and object.
+    var posX = 0;
+    var W = 246;
+  var H = 60;
+  var circles = []; 
+  
+  //Get canvas size
+  canvas.width = 246;
+  canvas.height = 60; 
+
+    // Animate.
+    function animate() {
+        requestID = requestAnimationFrame(animate);
+    //Fill canvas with black color
+    //ctx.globalCompositeOperation = "source-over";
+    ctx.fillStyle = "rgba(0,0,0,0.15)";
+    ctx.fillRect(0, 0, W, H);
+
+    //Fill the canvas with circles
+    for(var j = 0; j < circles.length; j++){
+      var c = circles[j];
+
+      //Create the circles
+      ctx.beginPath();
+      ctx.arc(c.x, c.y, c.radius, 0, Math.PI*2, false);
+          ctx.fillStyle = "rgba("+c.r+", "+c.g+", "+c.b+", 0.5)";
+      ctx.fill();
+
+      c.x += c.vx;
+      c.y += c.vy;
+      c.radius -= .02;
+
+      if(c.radius < 0)
+        circles[j] = new create();
+    }
+    
+     
+        
+    }
+  
+ //Random Circles creator
+      function create() {
+
+        //Place the circles at the center
+
+        this.x = W/2;
+        this.y = H/2;
+
+
+        //Random radius between 2 and 6
+        this.radius = 2 + Math.random()*3; 
+
+        //Random velocities
+        this.vx = -5 + Math.random()*10;
+        this.vy = -5 + Math.random()*10;
+
+        //Random colors
+        this.r = Math.round(Math.random())*255;
+        this.g = Math.round(Math.random())*255;
+        this.b = Math.round(Math.random())*255;
+      }
+
+      for (var i = 0; i < 500; i++) {
+        circles.push(new create());
+      }
+
+    // Event listener for the start button.
+    startBtn.addEventListener('mouseover', function(e) {
+        e.preventDefault();
+
+        // Start the animation.
+        requestID = requestAnimationFrame(animate);
+    });
+
+
+    // Event listener for the stop button.
+    startBtn.addEventListener('mouseout', function(e) {
+        e.preventDefault();
+
+        // Stop the animation;
+        cancelAnimationFrame(requestID);
+    
+    e.preventDefault();
+
+        // Reset the X position to 0.
+        posX = 0;
+
+        // Clear the canvas.
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Draw the initial box on the canvas.
+        ctx.fillRect(posX, 0, boxWidth, canvas.height);
+    
+    });
+  
+  
+    /*// Event listener for the reset button.
+    resetBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        // Reset the X position to 0.
+        posX = 0;
+
+        // Clear the canvas.
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Draw the initial box on the canvas.
+        ctx.fillRect(posX, 0, boxWidth, canvas.height);
+    });*/
+
+
+}());
 </script>
 <style type="text/css">
     /*Slider*/
@@ -198,17 +306,88 @@
                 cursor: pointer;
             }
                /*End-LightBox*/
-
-
+ #fireCanvas {
+        margin: 10px;
+        margin-left: 650px;
+        text-align:center;
+        align-content: center;
+        
+        
+      }
+      table {
+        border-collapse: collapse;
+        border: 1px solid #000;
+      }
      
+      td.pixel {
+        width: 4px;
+        height: 4px;
+        border: 0;
+      }
+      .pixel-index {
+        font-size: 7px;
+        display: inline-block;
+        position: absolute;
+        top: 1px;
+        right: 1px;
+        color: #927450;
+      }
+ 
+    .logo_header
+{
+   .logo_header {
+  transform: rotate(-15deg);
+  position:relative;
+  
+  top:50%;
+  left:50%;
+  margin-left:-50px;
+  width: 100px;
+  height: 100px;
+  
+  /* CÓDIGO PARA CHAMAR A ANIMAÇÃO */
+  -webkit-animation: rodaroda 3s linear alternate 3;
+  -moz-animation: rodaroda 3.0s linear infinite;
+  -ms-animation: rodaroda 3.0s linear infinite;
+  -o-animation: rodaroda 3.0s linear infinite;
+  animation: rodaroda 3.0s linear infinite;
+}
+
+/* KEY FRAMES PARA FAZER OS GIROS */
+@-webkit-keyframes rodaroda {
+    0% { -webkit-transform:rotate(0deg); -moz-transform:rotate(0deg); -ms-transform:rotate(0deg); -o-transform:rotate(0deg); transform:rotate(0deg); }
+    50% { -webkit-transform:rotate(180deg); -moz-transform:rotate(180deg); -ms-transform:rotate(180deg); -o-transform:rotate(180deg); transform:rotate(180deg); }
+    100% { -webkit-transform:rotate(360deg); -moz-transform:rotate(360deg); -ms-transform:rotate(360deg); -o-transform:rotate(360deg); transform:rotate(360deg); }
+}
+@-moz-keyframes rodaroda {
+    0% { -webkit-transform:rotate(0deg); -moz-transform:rotate(0deg); -ms-transform:rotate(0deg); -o-transform:rotate(0deg); transform:rotate(0deg); }
+    50% { -webkit-transform:rotate(180deg); -moz-transform:rotate(180deg); -ms-transform:rotate(180deg); -o-transform:rotate(180deg); transform:rotate(180deg); }
+    100% { -webkit-transform:rotate(360deg); -moz-transform:rotate(360deg); -ms-transform:rotate(360deg); -o-transform:rotate(360deg); transform:rotate(360deg); }
+}
+@-ms-keyframes rodaroda {
+    0% { -webkit-transform:rotate(0deg); -moz-transform:rotate(0deg); -ms-transform:rotate(0deg); -o-transform:rotate(0deg); transform:rotate(0deg); }
+    50% { -webkit-transform:rotate(180deg); -moz-transform:rotate(180deg); -ms-transform:rotate(180deg); -o-transform:rotate(180deg); transform:rotate(180deg); }
+    100% { -webkit-transform:rotate(360deg); -moz-transform:rotate(360deg); -ms-transform:rotate(360deg); -o-transform:rotate(360deg); transform:rotate(360deg); }
+}
+@-o-keyframes rodaroda {
+    0% { -webkit-transform:rotate(0deg); -moz-transform:rotate(0deg); -ms-transform:rotate(0deg); -o-transform:rotate(0deg); transform:rotate(0deg); }
+    50% { -webkit-transform:rotate(180deg); -moz-transform:rotate(180deg); -ms-transform:rotate(180deg); -o-transform:rotate(180deg); transform:rotate(180deg); }
+    100% { -webkit-transform:rotate(360deg); -moz-transform:rotate(360deg); -ms-transform:rotate(360deg); -o-transform:rotate(360deg); transform:rotate(360deg); }
+}
+@keyframes rodaroda {
+    0% { -webkit-transform:rotate(0deg); -moz-transform:rotate(0deg); -ms-transform:rotate(0deg); -o-transform:rotate(0deg); transform:rotate(0deg); }
+    50% { -webkit-transform:rotate(180deg); -moz-transform:rotate(180deg); -ms-transform:rotate(180deg); -o-transform:rotate(180deg); transform:rotate(180deg); }
+    100% { -webkit-transform:rotate(360deg); -moz-transform:rotate(360deg); -ms-transform:rotate(360deg); -o-transform:rotate(360deg); transform:rotate(360deg); }
+}
+}
         </style>
         
         <link rel="stylesheet"  href="css/lightslider.css"/>
     </head>
     <body>
         <header class="titulo-principal">
-  <img src="imagens/braia.jpg" class="foto-home">
-	<h1>Robô Segue Linha</h1>
+          <img src="imagens/braia.jpg" class="foto-home">
+        	<h1>Robô Segue Linha</h1>
 
             <ul class="palavras-home">
                 <li class="palavra-home arduino">Arduino</li>
@@ -232,25 +411,19 @@
 
             <div class="box">
                 <div class="close">X</div> 
-        <div class="axios">
+     
             <h1>Receba nossa NewsLetter</h1>
 
-            <form id="form-cep" method="post" action="newsletter.php" class="form form-inline">
-
+            <form method="post" action="newsletter.php" class="form form-inline">
                 <input type="text" name="nome" id="nome" placeholder="Informe seu nome "class="form-control">
                 <input type="text" name="email" id="email" placeholder="Informe seu Email" class="form-control">
-                <input type="text" name="cep" id="cep" placeholder="Informe o cep" class="form-control">
-                <button type="button" class="btn btn-info" onclick="searchCep()">Buscar</button>
                 <button type="submit" class="btn btn-info">Receber</button>
-
             </form>
-        </div>
-
-                 
-
 
         </div>
 
+            
+        </div>
 
             <div id="error" style="display: none;" class="alert alert-danger"></div>
 
@@ -275,8 +448,14 @@
 	  
 
 
-    </div>
-			   <span >sigo linhas de forma<em>THE FAST AND THE FURIOUS</em></span></p>
+    </div> 
+            <div class="logo_header">
+                <img src="imagens/braia.jpg" alt="Logo Kw Desgign">
+            </div>
+                <div id="fireCanvas"></div>
+            <div class="logo_header">
+                 <img src="imagens/braia.jpg" alt="Logo Kw Desgign">
+            </div>
             </section>
             
             <section class="secao-inicio trabalhos">
@@ -307,7 +486,7 @@
                 </div>
 
             <!------------------>
-                <a class="botao-index" href="portfolio.html">Acesse Nossa Galeria</a>
+                <a class="botao-index" href="portfolio.php">Acesse Nossa Galeria</a>
             </section>
             <section class="secao-inicio blog">
                 <h2>Blog</h2>
@@ -369,7 +548,6 @@
         </ul>
 
         </footer>
-
       
     </body>
     

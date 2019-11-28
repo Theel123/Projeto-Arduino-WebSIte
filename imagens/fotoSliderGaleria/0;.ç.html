@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html data-product="alura" lang="pt-BR"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style class="vjs-styles-defaults">
+      .video-js {
+        width: 300px;
+        height: 150px;
+      }
+
+      .vjs-fluid {
+        padding-top: 56.25%
+      }
+    </style><style class="vjs-styles-dimensions">
+      .video-player-dimensions {
+        width: 960px;
+        height: 540px;
+      }
+
+      .video-player-dimensions.vjs-fluid {
+        padding-top: 56.25%;
+      }
+    </style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	
+		
+
+
+
+
+<!-- Google Tag Manager -->
+<script async="" src="0;.%C3%A7_files/analytics.js"></script><script async="" id="cio-tracker" data-site-id="fccd7e3d49531457b6b2" src="0;.%C3%A7_files/track.js"></script><script type="text/javascript" async="" src="0;.%C3%A7_files/analytics.js"></script><script async="" src="0;.%C3%A7_files/gtm.js"></script><script>
+	(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer', 'GTM-TN542JN');
+</script>
+<!-- End Google Tag Manager -->
+
+
+
+
+	<script type="text/javascript">
+        dataLayer.push({
+            'tipoPagina': 'Aula',
+            'curso': 'Kubernetes: Introdução a orquestração de containers'
+        });
+	</script>
+
+	
+
+	<title>Kubernetes: Aula 1 - Atividade 8 Criando container web | Alura - Cursos online de tecnologia</title>
+	
+	<link rel="shortcut icon" href="https://cursos.alura.com.br/images/alura/favicon.ico">
+	
+	<link href="0;.%C3%A7_files/css.css" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com/">
+	
+	<link rel="stylesheet" href="0;.%C3%A7_files/video-js.css">
+    <link rel="stylesheet" href="0;.%C3%A7_files/silvermine-videojs-quality-selector.css">
+    <link rel="stylesheet" href="0;.%C3%A7_files/prettify.css">
+
+	<link rel="stylesheet" href="0;.%C3%A7_files/base.css">
+	<link rel="stylesheet" href="0;.%C3%A7_files/formattedText.css">
+	
+	<link rel="stylesheet" href="0;.%C3%A7_files/container.css">
+	<link rel="stylesheet" href="0;.%C3%A7_files/classPage.css">
+	<link rel="stylesheet" href="0;.%C3%A7_files/menuSettings.css">
+	<link rel="stylesheet" href="0;.%C3%A7_files/taskProgress.css">
+	<link rel="stylesheet" href="0;.%C3%A7_files/taskMessageInfo.css">
+	<link rel="stylesheet" href="0;.%C3%A7_files/alternativeList.css">
+	<link rel="stylesheet" href="0;.%C3%A7_files/taskFeedback.css">
+	<link rel="stylesheet" href="0;.%C3%A7_files/markdown.css">
+	<link rel="stylesheet" href="0;.%C3%A7_files/finishSection.css">
+	<link rel="stylesheet" href="0;.%C3%A7_files/phrase.css">
+	<link rel="stylesheet" href="0;.%C3%A7_files/hqexplanation.css">
+	<link rel="stylesheet" href="0;.%C3%A7_files/openquestion.css">
+	<link rel="stylesheet" href="0;.%C3%A7_files/textcontent.css">
+	<link rel="stylesheet" href="0;.%C3%A7_files/video.css">
+	<link rel="stylesheet" href="0;.%C3%A7_files/singlechoice.css">
+	<link rel="stylesheet" href="0;.%C3%A7_files/music.css">
+	<link rel="stylesheet" href="0;.%C3%A7_files/multiplechoice.css">
+	<link rel="stylesheet" href="0;.%C3%A7_files/videodialog.css">
+	<link rel="stylesheet" href="0;.%C3%A7_files/fillintheblank.css">
+	<link rel="stylesheet" href="0;.%C3%A7_files/speakingpractice.css">
+	<link rel="stylesheet" href="0;.%C3%A7_files/pronunciationpractice.css">
+	<link rel="stylesheet" href="0;.%C3%A7_files/repetition.css">
+	<link rel="stylesheet" href="0;.%C3%A7_files/genericVideo.css">
+	<link rel="stylesheet" href="0;.%C3%A7_files/projectSubmit.css">
+	<link rel="stylesheet" href="0;.%C3%A7_files/extraContentTask.css">
+	<link rel="stylesheet" href="0;.%C3%A7_files/taskContent.css">
+	<link rel="stylesheet" href="0;.%C3%A7_files/taskButtons.css">
+	<link rel="stylesheet" href="0;.%C3%A7_files/markdownEditor.css">
+	<link rel="stylesheet" href="0;.%C3%A7_files/audioPlayer.css">
+	<link rel="stylesheet" href="0;.%C3%A7_files/dark-mode.css">
+
+	
+
+	<style type="text/css">
+		.task:before, .video-js .vjs-play-progress {
+			background-color: #2A7AE4;
+		}
+	</style>
+
+	
+	
+	<script src="0;.%C3%A7_files/sha256.js"></script></head>
+<body cz-shortcut-listen="true">
+
+
+	
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+	<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TN542JN"
+				  height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+
+<section class="task" data-allow-answer="true" data-task-section-exam="false" data-task-type="video" data-task-id="30059" data-author-id="302549" data-course-code="kubernetes" data-section-name="Introduzindo Kubernetes" data-section-id="5395" data-section-number="1" data-domain="cursos.alura.com.br" data-hasfeedbackanswer="false" data-url-prefix="/">
+	
+	<section class="task-body">
+		
+		<header class="task-body-header">
+			<div class="container">
+				<h1 class="task-body-header-title">
+					<svg class="task-body-header-title-svg" aria-label="Atividade de Vídeo">
+						<use xlink:href="/images/gnarus/classPage/icon-menu-icons.svg#VIDEO"></use>
+					</svg>
+					<small>08</small>
+					<span class="task-body-header-title-text"> Criando container web</span>
+				</h1>
+				
+					<div class="task-body-header-actions">
+						<a href="https://cursos.alura.com.br/course/kubernetes/task/30059/next" aria-hidden="true" class="task-actions-button task-actions-button-next task-submit">Próxima Atividade</a>
+					</div>
+				
+			</div>
+		</header>
+		<main class="task-body-main" data-should-warn="false">
+			
+
+
+
+
+
+
+
+	
+	
+	
+	
+		
+
+
+
+
+
+
+
+    
+    
+        <section class="video" id="task-content">
+            <div class="container theater-mode">
+                
+
+
+
+
+<div class="settings">
+	<button type="button" class="settings-button" aria-label="Configurações">
+		<svg class="settings-button-icon">
+			<use xlink:href="/images/gnarus/classPage/icon-menu-icons.svg#MENU_SETTINGS"></use>
+		</svg>
+	</button>
+	<div class="settings-box">
+		<span class="settings-box-title"></span>
+		<ul class="settings-box-list">
+			
+				<li class="settings-box-item settings-box-item-darkmode">
+					<button class="dark-mode-action">
+							Modo noturno
+					</button>
+				</li>
+			
+			
+				
+				
+				
+					
+					
+						
+							
+							
+								<li class="settings-box-item settings-box-item-suggestion"><a href="https://cursos.alura.com.br/suggestions/new/kubernetes/30059/question">Sugerir alteração</a></li>
+							
+						
+					
+				
+				
+			
+			
+		</ul>
+	</div>
+</div>
+                
+
+
+
+
+<section id="video" class="video-container">
+    <input id="videoPreferences-player" type="hidden" value="CUSTOM">
+    
+    <div id="video-container-data" class="" data-section-id="5395" data-course="kubernetes" data-playback-rate="1.2" data-task-id="30059" data-quality="sd" data-course-id="680" data-gnarus-name="alura" data-error-message="&lt;p&gt;Não foi possível reproduzir o vídeo. Veja problemas e soluções comuns &lt;a href='https://suporte.alura.com.br/article/117-os-videos-estao-carregando-muito-lentamente-o-que-devo-fazer'&gt;em  nosso FAQ&lt;/a&gt;&lt;/p&gt;" data-error-label="Não foi possível reproduzir o video, visite https://suporte.alura.com.br/article/117-os-videos-estao-carregando-muito-lentamente-o-que-devo-fazer para ver problemas e soluções comuns.">
+
+        
+    
+          <video-js id="video-player" class="video-js vjs-big-play-centered vjs-default-skin video-player-frame video-player vjs-paused vjs-fluid video-player-dimensions vjs-controls-enabled vjs-workinghover vjs-v7 vjs-user-active" preload="auto" tabindex="-1" role="region" aria-label="Video Player" lang="pt-br"><video tabindex="-1" preload="auto" class="vjs-tech" id="video-player_html5_api" src="blob:https://cursos.alura.com.br/07d234e4-c0e7-46c4-a021-29b498098356"></video>
+           <div class="vjs-poster" tabindex="-1" aria-disabled="false" style="background-image: url(&quot;/images/video/vinheta-alura.png&quot;);"></div><div class="vjs-text-track-display" aria-live="off" aria-atomic="true"><div style="position: absolute; inset: 0px; margin: 1.5%;"></div></div><div class="vjs-loading-spinner" dir="ltr"><span class="vjs-control-text">Video Player is loading.</span></div><button class="vjs-big-play-button" type="button" title="Play Video" aria-disabled="false"><span aria-hidden="true" class="vjs-icon-placeholder"></span><span class="vjs-control-text" aria-live="polite">Play Video</span></button><div class="vjs-control-bar" dir="ltr"><div class="vjs-progress-control vjs-control"><div tabindex="0" class="vjs-progress-holder vjs-slider vjs-slider-horizontal" role="slider" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Progress Bar"><div class="vjs-load-progress" style="width: 0.698641%;"><span class="vjs-control-text"><span>Loaded</span>: <span class="vjs-control-text-loaded-percentage">0.70%</span></span><div style="left: 1.10815%; width: 98.8919%;"></div></div><div class="vjs-mouse-display"><div class="vjs-time-tooltip" aria-hidden="true"></div></div><div class="vjs-play-progress vjs-slider-bar" aria-hidden="true"><div class="vjs-time-tooltip" aria-hidden="true"></div></div></div></div><button class="vjs-play-control vjs-control vjs-button" type="button" title="Play" aria-disabled="false"><span aria-hidden="true" class="vjs-icon-placeholder"></span><span class="vjs-control-text" aria-live="polite">Play</span></button><div class="vjs-volume-panel vjs-control vjs-volume-panel-horizontal"><button class="vjs-mute-control vjs-control vjs-button vjs-vol-3" type="button" title="Mute" aria-disabled="false"><span aria-hidden="true" class="vjs-icon-placeholder"></span><span class="vjs-control-text" aria-live="polite">Mute</span></button><div class="vjs-volume-control vjs-control vjs-volume-horizontal"><div tabindex="0" class="vjs-volume-bar vjs-slider-bar vjs-slider vjs-slider-horizontal" role="slider" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" aria-label="Volume Level" aria-live="polite" aria-valuetext="100%"><div class="vjs-volume-level"><span class="vjs-control-text"></span></div></div></div></div><div class="vjs-current-time vjs-time-control vjs-control"><span class="vjs-control-text" role="presentation">Current Time </span><span class="vjs-current-time-display" aria-live="off" role="presentation">0:00</span></div><div class="vjs-time-control vjs-time-divider" aria-hidden="true"><div><span>/</span></div></div><div class="vjs-duration vjs-time-control vjs-control"><span class="vjs-control-text" role="presentation">Duration </span><span class="vjs-duration-display" aria-live="off" role="presentation">14:21</span></div><div class="vjs-playback-rate vjs-menu-button vjs-menu-button-popup vjs-control vjs-button"><button class="vjs-playback-rate vjs-menu-button vjs-menu-button-popup vjs-button" type="button" aria-disabled="false" title="Playback Rate" aria-haspopup="true" aria-expanded="false"><span aria-hidden="true" class="vjs-icon-placeholder"></span><span class="vjs-control-text" aria-live="polite">Playback Rate</span></button><div class="vjs-menu"><ul class="vjs-menu-content" role="menu"><li class="vjs-menu-item" tabindex="-1" role="menuitemradio" aria-disabled="false" aria-checked="false"><span class="vjs-menu-item-text">3x</span><span class="vjs-control-text" aria-live="polite"></span></li><li class="vjs-menu-item" tabindex="-1" role="menuitemradio" aria-disabled="false" aria-checked="false"><span class="vjs-menu-item-text">2.5x</span><span class="vjs-control-text" aria-live="polite"></span></li><li class="vjs-menu-item" tabindex="-1" role="menuitemradio" aria-disabled="false" aria-checked="false"><span class="vjs-menu-item-text">2x</span><span class="vjs-control-text" aria-live="polite"></span></li><li class="vjs-menu-item" tabindex="-1" role="menuitemradio" aria-disabled="false" aria-checked="false"><span class="vjs-menu-item-text">1.5x</span><span class="vjs-control-text" aria-live="polite"></span></li><li class="vjs-menu-item" tabindex="-1" role="menuitemradio" aria-disabled="false" aria-checked="false"><span class="vjs-menu-item-text">1.2x</span><span class="vjs-control-text" aria-live="polite"></span></li><li class="vjs-menu-item vjs-selected" tabindex="-1" role="menuitemradio" aria-disabled="false" aria-checked="true"><span class="vjs-menu-item-text">1x</span><span class="vjs-control-text" aria-live="polite">, selected</span></li><li class="vjs-menu-item" tabindex="-1" role="menuitemradio" aria-disabled="false" aria-checked="false"><span class="vjs-menu-item-text">0.8x</span><span class="vjs-control-text" aria-live="polite"></span></li><li class="vjs-menu-item" tabindex="-1" role="menuitemradio" aria-disabled="false" aria-checked="false"><span class="vjs-menu-item-text">0.7x</span><span class="vjs-control-text" aria-live="polite"></span></li></ul></div><div class="vjs-playback-rate-value">1x</div></div><div class="vjs-quality-selector vjs-menu-button vjs-menu-button-popup vjs-control vjs-button"><button class="vjs-menu-button vjs-menu-button-popup vjs-button" type="button" aria-disabled="false" aria-haspopup="true" aria-expanded="false" title="Open quality selector menu"><span aria-hidden="true" class="vjs-icon-placeholder"></span><span class="vjs-control-text" aria-live="polite">Open quality selector menu</span></button><div class="vjs-menu"><ul class="vjs-menu-content" role="menu"><li class="vjs-menu-item" tabindex="-1" role="menuitemradio" aria-disabled="false" aria-checked="false"><span class="vjs-menu-item-text">hd</span><span class="vjs-control-text" aria-live="polite"></span></li><li class="vjs-menu-item vjs-selected" tabindex="-1" role="menuitemradio" aria-disabled="false" aria-checked="true"><span class="vjs-menu-item-text">sd</span><span class="vjs-control-text" aria-live="polite">, selected</span></li></ul></div></div><button class="vjs-fullscreen-control vjs-control vjs-button" type="button" title="Fullscreen" aria-disabled="false"><span aria-hidden="true" class="vjs-icon-placeholder"></span><span class="vjs-control-text" aria-live="polite">Fullscreen</span></button></div><div class="vjs-error-display vjs-modal-dialog vjs-hidden " tabindex="-1" aria-describedby="video-player_component_369_description" aria-hidden="true" aria-label="Modal Window" role="dialog"><p class="vjs-modal-dialog-description vjs-control-text" id="video-player_component_369_description">This is a modal window.</p><div class="vjs-modal-dialog-content" role="document"></div></div><div class="vjs-modal-dialog vjs-hidden  vjs-text-track-settings" tabindex="-1" aria-describedby="video-player_component_374_description" aria-hidden="true" aria-label="Caption Settings Dialog" role="dialog"><p class="vjs-modal-dialog-description vjs-control-text" id="video-player_component_374_description">Beginning of dialog window. Escape will cancel and close the window.</p><div class="vjs-modal-dialog-content" role="document"><div class="vjs-track-settings-colors"><fieldset class="vjs-fg-color vjs-track-setting"><legend id="captions-text-legend-video-player_component_374">Text</legend><label id="captions-foreground-color-video-player_component_374" class="vjs-label">Color</label><select aria-labelledby="captions-text-legend-video-player_component_374 captions-foreground-color-video-player_component_374"><option id="captions-foreground-color-video-player_component_374-White" value="#FFF" aria-labelledby="captions-text-legend-video-player_component_374 captions-foreground-color-video-player_component_374 captions-foreground-color-video-player_component_374-White" selected="selected">White</option><option id="captions-foreground-color-video-player_component_374-Black" value="#000" aria-labelledby="captions-text-legend-video-player_component_374 captions-foreground-color-video-player_component_374 captions-foreground-color-video-player_component_374-Black">Black</option><option id="captions-foreground-color-video-player_component_374-Red" value="#F00" aria-labelledby="captions-text-legend-video-player_component_374 captions-foreground-color-video-player_component_374 captions-foreground-color-video-player_component_374-Red">Red</option><option id="captions-foreground-color-video-player_component_374-Green" value="#0F0" aria-labelledby="captions-text-legend-video-player_component_374 captions-foreground-color-video-player_component_374 captions-foreground-color-video-player_component_374-Green">Green</option><option id="captions-foreground-color-video-player_component_374-Blue" value="#00F" aria-labelledby="captions-text-legend-video-player_component_374 captions-foreground-color-video-player_component_374 captions-foreground-color-video-player_component_374-Blue">Blue</option><option id="captions-foreground-color-video-player_component_374-Yellow" value="#FF0" aria-labelledby="captions-text-legend-video-player_component_374 captions-foreground-color-video-player_component_374 captions-foreground-color-video-player_component_374-Yellow">Yellow</option><option id="captions-foreground-color-video-player_component_374-Magenta" value="#F0F" aria-labelledby="captions-text-legend-video-player_component_374 captions-foreground-color-video-player_component_374 captions-foreground-color-video-player_component_374-Magenta">Magenta</option><option id="captions-foreground-color-video-player_component_374-Cyan" value="#0FF" aria-labelledby="captions-text-legend-video-player_component_374 captions-foreground-color-video-player_component_374 captions-foreground-color-video-player_component_374-Cyan">Cyan</option></select><span class="vjs-text-opacity vjs-opacity"><label id="captions-foreground-opacity-video-player_component_374" class="vjs-label">Transparency</label><select aria-labelledby="captions-text-legend-video-player_component_374 captions-foreground-opacity-video-player_component_374"><option id="captions-foreground-opacity-video-player_component_374-Opaque" value="1" aria-labelledby="captions-text-legend-video-player_component_374 captions-foreground-opacity-video-player_component_374 captions-foreground-opacity-video-player_component_374-Opaque" selected="selected">Opaque</option><option id="captions-foreground-opacity-video-player_component_374-SemiTransparent" value="0.5" aria-labelledby="captions-text-legend-video-player_component_374 captions-foreground-opacity-video-player_component_374 captions-foreground-opacity-video-player_component_374-SemiTransparent">Semi-Transparent</option></select></span></fieldset><fieldset class="vjs-bg-color vjs-track-setting"><legend id="captions-background-video-player_component_374">Background</legend><label id="captions-background-color-video-player_component_374" class="vjs-label">Color</label><select aria-labelledby="captions-background-video-player_component_374 captions-background-color-video-player_component_374"><option id="captions-background-color-video-player_component_374-Black" value="#000" aria-labelledby="captions-background-video-player_component_374 captions-background-color-video-player_component_374 captions-background-color-video-player_component_374-Black" selected="selected">Black</option><option id="captions-background-color-video-player_component_374-White" value="#FFF" aria-labelledby="captions-background-video-player_component_374 captions-background-color-video-player_component_374 captions-background-color-video-player_component_374-White">White</option><option id="captions-background-color-video-player_component_374-Red" value="#F00" aria-labelledby="captions-background-video-player_component_374 captions-background-color-video-player_component_374 captions-background-color-video-player_component_374-Red">Red</option><option id="captions-background-color-video-player_component_374-Green" value="#0F0" aria-labelledby="captions-background-video-player_component_374 captions-background-color-video-player_component_374 captions-background-color-video-player_component_374-Green">Green</option><option id="captions-background-color-video-player_component_374-Blue" value="#00F" aria-labelledby="captions-background-video-player_component_374 captions-background-color-video-player_component_374 captions-background-color-video-player_component_374-Blue">Blue</option><option id="captions-background-color-video-player_component_374-Yellow" value="#FF0" aria-labelledby="captions-background-video-player_component_374 captions-background-color-video-player_component_374 captions-background-color-video-player_component_374-Yellow">Yellow</option><option id="captions-background-color-video-player_component_374-Magenta" value="#F0F" aria-labelledby="captions-background-video-player_component_374 captions-background-color-video-player_component_374 captions-background-color-video-player_component_374-Magenta">Magenta</option><option id="captions-background-color-video-player_component_374-Cyan" value="#0FF" aria-labelledby="captions-background-video-player_component_374 captions-background-color-video-player_component_374 captions-background-color-video-player_component_374-Cyan">Cyan</option></select><span class="vjs-bg-opacity vjs-opacity"><label id="captions-background-opacity-video-player_component_374" class="vjs-label">Transparency</label><select aria-labelledby="captions-background-video-player_component_374 captions-background-opacity-video-player_component_374"><option id="captions-background-opacity-video-player_component_374-Opaque" value="1" aria-labelledby="captions-background-video-player_component_374 captions-background-opacity-video-player_component_374 captions-background-opacity-video-player_component_374-Opaque" selected="selected">Opaque</option><option id="captions-background-opacity-video-player_component_374-SemiTransparent" value="0.5" aria-labelledby="captions-background-video-player_component_374 captions-background-opacity-video-player_component_374 captions-background-opacity-video-player_component_374-SemiTransparent">Semi-Transparent</option><option id="captions-background-opacity-video-player_component_374-Transparent" value="0" aria-labelledby="captions-background-video-player_component_374 captions-background-opacity-video-player_component_374 captions-background-opacity-video-player_component_374-Transparent">Transparent</option></select></span></fieldset><fieldset class="vjs-window-color vjs-track-setting"><legend id="captions-window-video-player_component_374">Window</legend><label id="captions-window-color-video-player_component_374" class="vjs-label">Color</label><select aria-labelledby="captions-window-video-player_component_374 captions-window-color-video-player_component_374"><option id="captions-window-color-video-player_component_374-Black" value="#000" aria-labelledby="captions-window-video-player_component_374 captions-window-color-video-player_component_374 captions-window-color-video-player_component_374-Black" selected="selected">Black</option><option id="captions-window-color-video-player_component_374-White" value="#FFF" aria-labelledby="captions-window-video-player_component_374 captions-window-color-video-player_component_374 captions-window-color-video-player_component_374-White">White</option><option id="captions-window-color-video-player_component_374-Red" value="#F00" aria-labelledby="captions-window-video-player_component_374 captions-window-color-video-player_component_374 captions-window-color-video-player_component_374-Red">Red</option><option id="captions-window-color-video-player_component_374-Green" value="#0F0" aria-labelledby="captions-window-video-player_component_374 captions-window-color-video-player_component_374 captions-window-color-video-player_component_374-Green">Green</option><option id="captions-window-color-video-player_component_374-Blue" value="#00F" aria-labelledby="captions-window-video-player_component_374 captions-window-color-video-player_component_374 captions-window-color-video-player_component_374-Blue">Blue</option><option id="captions-window-color-video-player_component_374-Yellow" value="#FF0" aria-labelledby="captions-window-video-player_component_374 captions-window-color-video-player_component_374 captions-window-color-video-player_component_374-Yellow">Yellow</option><option id="captions-window-color-video-player_component_374-Magenta" value="#F0F" aria-labelledby="captions-window-video-player_component_374 captions-window-color-video-player_component_374 captions-window-color-video-player_component_374-Magenta">Magenta</option><option id="captions-window-color-video-player_component_374-Cyan" value="#0FF" aria-labelledby="captions-window-video-player_component_374 captions-window-color-video-player_component_374 captions-window-color-video-player_component_374-Cyan">Cyan</option></select><span class="vjs-window-opacity vjs-opacity"><label id="captions-window-opacity-video-player_component_374" class="vjs-label">Transparency</label><select aria-labelledby="captions-window-video-player_component_374 captions-window-opacity-video-player_component_374"><option id="captions-window-opacity-video-player_component_374-Transparent" value="0" aria-labelledby="captions-window-video-player_component_374 captions-window-opacity-video-player_component_374 captions-window-opacity-video-player_component_374-Transparent" selected="selected">Transparent</option><option id="captions-window-opacity-video-player_component_374-SemiTransparent" value="0.5" aria-labelledby="captions-window-video-player_component_374 captions-window-opacity-video-player_component_374 captions-window-opacity-video-player_component_374-SemiTransparent">Semi-Transparent</option><option id="captions-window-opacity-video-player_component_374-Opaque" value="1" aria-labelledby="captions-window-video-player_component_374 captions-window-opacity-video-player_component_374 captions-window-opacity-video-player_component_374-Opaque">Opaque</option></select></span></fieldset></div><div class="vjs-track-settings-font"><fieldset class="vjs-font-percent vjs-track-setting"><legend id="captions-font-size-video-player_component_374" class="">Font Size</legend><select aria-labelledby="captions-font-size-video-player_component_374"><option id="captions-font-size-video-player_component_374-50" value="0.50" aria-labelledby="captions-font-size-video-player_component_374 captions-font-size-video-player_component_374-50">50%</option><option id="captions-font-size-video-player_component_374-75" value="0.75" aria-labelledby="captions-font-size-video-player_component_374 captions-font-size-video-player_component_374-75">75%</option><option id="captions-font-size-video-player_component_374-100" value="1.00" aria-labelledby="captions-font-size-video-player_component_374 captions-font-size-video-player_component_374-100" selected="selected">100%</option><option id="captions-font-size-video-player_component_374-125" value="1.25" aria-labelledby="captions-font-size-video-player_component_374 captions-font-size-video-player_component_374-125">125%</option><option id="captions-font-size-video-player_component_374-150" value="1.50" aria-labelledby="captions-font-size-video-player_component_374 captions-font-size-video-player_component_374-150">150%</option><option id="captions-font-size-video-player_component_374-175" value="1.75" aria-labelledby="captions-font-size-video-player_component_374 captions-font-size-video-player_component_374-175">175%</option><option id="captions-font-size-video-player_component_374-200" value="2.00" aria-labelledby="captions-font-size-video-player_component_374 captions-font-size-video-player_component_374-200">200%</option><option id="captions-font-size-video-player_component_374-300" value="3.00" aria-labelledby="captions-font-size-video-player_component_374 captions-font-size-video-player_component_374-300">300%</option><option id="captions-font-size-video-player_component_374-400" value="4.00" aria-labelledby="captions-font-size-video-player_component_374 captions-font-size-video-player_component_374-400">400%</option></select></fieldset><fieldset class="vjs-edge-style vjs-track-setting"><legend id="video-player_component_374" class="">Text Edge Style</legend><select aria-labelledby="video-player_component_374"><option id="video-player_component_374-None" value="none" aria-labelledby="video-player_component_374 video-player_component_374-None" selected="selected">None</option><option id="video-player_component_374-Raised" value="raised" aria-labelledby="video-player_component_374 video-player_component_374-Raised">Raised</option><option id="video-player_component_374-Depressed" value="depressed" aria-labelledby="video-player_component_374 video-player_component_374-Depressed">Depressed</option><option id="video-player_component_374-Uniform" value="uniform" aria-labelledby="video-player_component_374 video-player_component_374-Uniform">Uniform</option><option id="video-player_component_374-Dropshadow" value="dropshadow" aria-labelledby="video-player_component_374 video-player_component_374-Dropshadow">Dropshadow</option></select></fieldset><fieldset class="vjs-font-family vjs-track-setting"><legend id="captions-font-family-video-player_component_374" class="">Font Family</legend><select aria-labelledby="captions-font-family-video-player_component_374"><option id="captions-font-family-video-player_component_374-ProportionalSansSerif" value="proportionalSansSerif" aria-labelledby="captions-font-family-video-player_component_374 captions-font-family-video-player_component_374-ProportionalSansSerif" selected="selected">Proportional Sans-Serif</option><option id="captions-font-family-video-player_component_374-MonospaceSansSerif" value="monospaceSansSerif" aria-labelledby="captions-font-family-video-player_component_374 captions-font-family-video-player_component_374-MonospaceSansSerif">Monospace Sans-Serif</option><option id="captions-font-family-video-player_component_374-ProportionalSerif" value="proportionalSerif" aria-labelledby="captions-font-family-video-player_component_374 captions-font-family-video-player_component_374-ProportionalSerif">Proportional Serif</option><option id="captions-font-family-video-player_component_374-MonospaceSerif" value="monospaceSerif" aria-labelledby="captions-font-family-video-player_component_374 captions-font-family-video-player_component_374-MonospaceSerif">Monospace Serif</option><option id="captions-font-family-video-player_component_374-Casual" value="casual" aria-labelledby="captions-font-family-video-player_component_374 captions-font-family-video-player_component_374-Casual">Casual</option><option id="captions-font-family-video-player_component_374-Script" value="script" aria-labelledby="captions-font-family-video-player_component_374 captions-font-family-video-player_component_374-Script">Script</option><option id="captions-font-family-video-player_component_374-SmallCaps" value="small-caps" aria-labelledby="captions-font-family-video-player_component_374 captions-font-family-video-player_component_374-SmallCaps">Small Caps</option></select></fieldset></div><div class="vjs-track-settings-controls"><button type="button" class="vjs-default-button" title="restore all settings to the default values">Reset<span class="vjs-control-text"> restore all settings to the default values</span></button><button type="button" class="vjs-done-button">Done</button></div></div><button class="vjs-close-button vjs-control vjs-button" type="button" aria-disabled="false" title="Close Modal Dialog"><span aria-hidden="true" class="vjs-icon-placeholder"></span><span class="vjs-control-text" aria-live="polite">Close Modal Dialog</span></button><p class="vjs-control-text">End of dialog window.</p></div></video-js>
+        </div>
+</section>
+                
+                    
+                        <h2 class="video-transcription-title">Transcrição</h2>
+                    
+                    <section id="transcription" class="video-transcription video-transcription--inactive transcription-toggle">
+                        <div class="formattedText" data-external-links="">
+                                <p>Na etapa anterior, construímos nosso 
+container do banco de dados, e agora falta fazermos as configurações do 
+container da aplicação web. Em <code>docker-composer.yaml</code> o nomearemos como sendo <code>web</code>, tomando cuidado de deixar tudo com a mesma indentação de <code>db</code> (o container do banco de dados).</p>
+<p>Qual será a imagem base a ser utilizada pelo container web? 
+Precisaremos de um servidor web para rodar esta aplicação, bem como do 
+PHP instalado - já que o projeto da Alura Sports foi feito nesta 
+linguagem - e, por fim, é preciso abrigar os arquivos do projeto nesta 
+imagem customizada.</p>
+<p>Como vimos no curso de Docker, é necessário realizarmos uma 
+customização da imagem conforme nossa necessidade. Conseguiremos fazê-lo
+ através do arquivo <strong><em>Dockerfile</em></strong>, que construiremos agora.</p>
+<p>Com "Ctrl + N", abriremos um novo documento no Atom, em que 
+informaremos inicialmente qual a imagem base a ser usada, e este será o 
+ponto de origem. Uma das formas como se diz "origem" em inglês é "<em>from</em>", queremos que nossa imagem tenha um servidor web da Apache e o PHP seja instalado na versão <code>5.6</code>. Sendo assim, digitaremos:</p>
+<pre class="prettyprint"><code><span class="pln">FROM php</span><span class="pun">:</span><span class="lit">5.6</span><span class="pun">-</span><span class="pln">apache</span></code></pre>
+<p>Lembremos que esta imagem que estamos customizando se refere à parte <strong>web</strong>, que precisa se comunicar com o banco de dados por meio de <code>mysqli_connect</code>, que não vem instalado automaticamente.</p>
+<p>Faremos isto acrescentando um comando de instalação:</p>
+<pre class="prettyprint"><code><span class="pln">FROM php</span><span class="pun">:</span><span class="lit">5.6</span><span class="pun">-</span><span class="pln">apache
+RUN docker</span><span class="pun">-</span><span class="pln">php</span><span class="pun">-</span><span class="pln">ext</span><span class="pun">-</span><span class="pln">install mysqli</span></code></pre>
+<p>Feito isto, indicaremos que os arquivos do projeto do diretório <code>loja</code> irão para <code>var/www/html</code>, do servidor da Apache, que é onde todo o conteúdo web fica inserido.</p>
+<p>Não podemos esquecer que a comunicação web utiliza a porta de comunicação <code>80</code>,
+ ou seja, devemos informar à imagem, que agora contempla nossa parte 
+web, de que é necessário expor esta porta para que possamos acessar 
+estes recursos web:</p>
+<pre class="prettyprint"><code><span class="pln">FROM php</span><span class="pun">:</span><span class="lit">5.6</span><span class="pun">-</span><span class="pln">apache
+RUN docker</span><span class="pun">-</span><span class="pln">php</span><span class="pun">-</span><span class="pln">ext</span><span class="pun">-</span><span class="pln">install mysqli
+COPY </span><span class="pun">/</span><span class="pln">loja </span><span class="pun">/</span><span class="kwd">var</span><span class="pun">/</span><span class="pln">www</span><span class="pun">/</span><span class="pln">html
+EXPOSE </span><span class="lit">80</span></code></pre>
+<p>Salvaremos este novo arquivo em "Projeto", nomeando-o com 
+"Dockerfile". Falta criarmos a imagem customizada a partir dele. No 
+terminal, acessaremos o diretório em que salvamos o arquivo recém 
+criado:</p>
+<pre class="prettyprint"><code><span class="pln">cd </span><span class="pun">Á</span><span class="pln">rea\ de\ </span><span class="typ">Trabalho</span><span class="pun">/</span><span class="pln">
+cd </span><span class="typ">Projeto</span><span class="pun">/</span><span class="pln">
+ls
+docker build </span><span class="pun">-</span><span class="pln">t </span><span class="str">"aplicacao-loja:v1"</span><span class="pln"> </span><span class="pun">.</span></code></pre>
+<p>Desta forma, teremos a construção da nossa imagem com base no 
+"Dockerfile". Aguardaremos a finalização do processo de criação da 
+imagem <code>aplicacao-loja:v1</code>. Vamos voltar ao arquivo <code>docker-compose.yaml</code> para passarmos esta imagem junto aos arquivos da Alura Sports.</p>
+<p>Precisaremos acessar o conteúdo web deste container também, portanto 
+iremos mapear sua porta, referente à parte web, para outra, disponível 
+na máquina local. Diremos que a porta <code>80</code> deverá ser mapeada para a <code>8080</code> da máquina local - sendo que poderia ser qualquer outra porta disponível.</p>
+<p>Não podemos esquecer que os containers, <code>web</code> e <code>db</code>,
+ precisarão se comunicar entre si, e o primeiro depende do segundo para 
+cadastrar os produtos e realizar a persistência dos dados. Isto será 
+indicado da seguinte forma:</p>
+<pre class="prettyprint"><code><span class="pln">web</span><span class="pun">:</span><span class="pln">
+  image</span><span class="pun">:</span><span class="pln"> aplicacao</span><span class="pun">-</span><span class="pln">loja</span><span class="pun">:</span><span class="pln">v1
+  ports</span><span class="pun">:</span><span class="pln">
+    </span><span class="pun">-</span><span class="pln"> </span><span class="lit">8080</span><span class="pun">:</span><span class="lit">80</span><span class="pln">
+  depends_on</span><span class="pun">:</span><span class="pln">
+    </span><span class="pun">-</span><span class="pln"> db</span></code></pre>
+<p>Com isto terminamos a configuração do arquivo do <code>docker-compose.yaml</code>.
+ Salvaremos este arquivo e voltaremos ao terminal para criarmos os 
+containers e inicializá-los. Digitaremos o seguinte, apertando "Enter" 
+em seguida:</p>
+<pre class="prettyprint"><code><span class="pln">docker</span><span class="pun">-</span><span class="pln">compose up </span><span class="pun">-</span><span class="pln">d</span></code></pre>
+<p>Assim, teremos os passos para a criação do container <code>db</code> com a imagem do MySQL e, depois, o processamento do nosso container da aplicação web. Aguardaremos um pouco e obteremos <code>projeto_db_1</code> e <code>projeto_web_1</code>, que devem estar sendo executados em modo "pano de fundo", ou "<em>background</em>". Para confirmar isto, usaremos o comando <code>docker ps</code> no terminal.</p>
+<p>Vamos testar nossa aplicação! Para isso, acessaremos e criaremos tabelas em nosso container do banco de dados, <code>loja</code>. Pediremos ajuda ao docker para executarmos alguns comandos:</p>
+<pre class="prettyprint"><code><span class="pln">docker </span><span class="kwd">exec</span><span class="pln"> </span><span class="pun">-</span><span class="pln">it projeto_db_1 sh</span></code></pre>
+<p>Apertaremos "Enter" e nos encontraremos dentro do container. Para acessarmos o MySQL, vamos digitar:</p>
+<pre class="prettyprint"><code><span class="pln">mysql </span><span class="pun">-</span><span class="pln">u root</span></code></pre>
+<p>E apertaremos "Enter" novamente, após o qual teremos que utilizar o banco <code>loja</code>:</p>
+<pre class="prettyprint"><code><span class="kwd">use</span><span class="pln"> loja</span></code></pre>
+<p>Os diretores da Alura Sports já nos passaram os códigos SQL para 
+criarmos estas tabelas, então basta apenas copiar e colá-los no 
+terminal, apertando "Enter" depois.</p>
+<p>Agora, verificaremos se de fato a nossa aplicação está funcionando como esperado. Para tal, abriremos uma janela no <em>browser</em> e digitaremos <code>localhost:8080</code>, pois em nosso arquivo <code>docker-compose.yaml</code> havíamos feito o mapeamento da porta <code>80</code> do container da aplicação web para a porta <code>8080</code>, da máquina local. </p>
+<p>Ao acessarmos a página, vê-se que a aplicação está disponível! Vamos 
+fazer alguns testes? Cadastraremos alguns produtos preenchendo o campo 
+"Nome" com "Camiseta seleção brasileira", "Preço" com "200", "Descrição"
+ com "Camiseta verde e amarela" na categoria "Futebol". Depois, 
+clicaremos em "Cadastrar". Maravilha!</p>
+<p>Clicaremos em "Adiciona Produto" na aba superior e incluiremos 
+"Raqueteira", "300" e "Raqueteira marca Alura", marcaremos o checkbox de
+ "Usado" e cadastraremos na categoria "Tenis".</p>
+<p>Na nova página, clicaremos em "alterar" para trocar o valor da 
+camiseta, adicionada anteriormente, para "250". A mensagem abaixo é 
+exibida:</p>
+<p><code>O produto Camiseta seleção brasileira , 250 foi alterado.</code></p>
+<p>Continuando, desta vez removeremos o produto "Raqueteira", com sucesso. Nossa aplicação está funcionando!!</p>
+
+                        </div>
+                    </section>
+                    
+                        <button class="video-transcription-button transcription-toggle" aria-hidden="true">
+                            <span class="video-transcription-button-text">continuar lendo</span>
+                        </button>
+                    
+                
+            </div>
+        </section>
+    
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+			
+				
+
+
+
+
+	
+	
+		<section class="task-actions">
+			<div class="container">
+				
+
+
+
+
+    <a href="https://cursos.alura.com.br/forum/curso-kubernetes/exercicio-criando-container-web/30059/novo" class=" task-actions-button task-actions-button-forum">Discutir no Forum</a>
+
+				
+				
+				
+					<a href="https://cursos.alura.com.br/course/kubernetes/task/30059/next" class="task-actions-button task-body-actions-button task-actions-button-next">Próxima Atividade</a>
+				
+			</div>
+		</section>
+	
+
+
+			
+		</main>
+	</section>
+	
+
+
+
+
+
+
+
+
+
+
+
+<button title="Abrir/Fechar menu" aria-label="Abrir/Fechar menu" type="button" class="openMenu-button task-body-button "></button>
+
+<aside class="task-menu" style="position: absolute;">
+	<section class="task-menu-header">
+		<button title="Fechar menu" aria-label="Fechar menu" type="button" class="openMenu-button task-menu-button "></button>
+		<div class="task-menu-header-info">
+			<a class="task-menu-header-info-title" href="https://cursos.alura.com.br/course/kubernetes" title="Ir para página do curso">
+				
+					
+					
+						<img src="0;.%C3%A7_files/kubernetes.svg" alt="ícone Kubernetes: Introdução a orquestração de containers" class="task-menu-header-info-title-icon " width="37.5px" height="37.5px">
+					
+				
+				<h2 class="task-menu-header-info-title-text">Kubernetes: Introdução a orquestração de containers</h2>
+			</a>
+			
+				<div class="task-menu-header-info-progress">
+					
+					<span class="task-menu-header-info-progress-percentage ">98%</span>
+					<span class="task-menu-header-info-progress-bar" style="background-image: linear-gradient(to right, #9de482, #9de482 98%, transparent 98%);"></span>
+				</div>
+			
+		</div>
+	</section>
+	
+	<section class="task-menu-section">
+		<div class="task-menu-section-title">
+			<span class="task-menu-section-title-number ">Aula<strong>01</strong>
+				<span>de 05</span></span>
+			<h3 class="task-menu-section-title-text">
+				Introduzindo Kubernetes
+			</h3>
+		</div>
+	</section>
+	<nav class="task-menu-nav">
+		<h2 class="task-menu-nav-title">
+			Atividades
+			<span>8 de 14</span>
+		</h2>
+		<ul class="task-menu-nav-list">
+			
+				
+				<li class="task-menu-nav-item ">
+					<a href="https://cursos.alura.com.br/course/kubernetes/task/30052" class="task-menu-nav-item-link task-menu-nav-item-link-HQ_EXPLANATION">
+						<svg class="task-menu-nav-item-svg task-menu-nav-item-svg--done" aria-label="Atividade de Explicação concluída">
+							
+								
+								<use xlink:href="/images/gnarus/classPage/icon-menu-icons.svg#HQ_EXPLANATION"></use>
+							
+							
+						
+					</svg>
+					<span class="task-menu-nav-item-number">01</span>
+					<span class="task-menu-nav-item-text">
+						<span class="task-menu-nav-item-title" title="Para saber mais: Estrutura do curso">
+							Para saber mais: Estrutura do curso
+						</span>
+						
+					</span></a>
+				</li>
+			
+				
+				<li class="task-menu-nav-item ">
+					<a href="https://cursos.alura.com.br/course/kubernetes/task/30051" class="task-menu-nav-item-link task-menu-nav-item-link-VIDEO">
+						<svg class="task-menu-nav-item-svg task-menu-nav-item-svg--done" aria-label="Atividade de Vídeo concluída">
+							
+								
+								<use xlink:href="/images/gnarus/classPage/icon-menu-icons.svg#VIDEO"></use>
+							
+							
+						
+					</svg>
+					<span class="task-menu-nav-item-number">02</span>
+					<span class="task-menu-nav-item-text">
+						<span class="task-menu-nav-item-title" title="Introdução">
+							Introdução
+						</span>
+						
+						<span class="task-menu-nav-item-infos">
+							
+								<span class="task-menu-nav-item-videoDuration" title="Ir para o Vídeo">02min</span>
+							
+						</span>
+					</span>
+					
+					</a>
+				</li>
+			
+				
+				<li class="task-menu-nav-item ">
+					<a href="https://cursos.alura.com.br/course/kubernetes/task/30068" class="task-menu-nav-item-link task-menu-nav-item-link-HQ_EXPLANATION">
+						<svg class="task-menu-nav-item-svg task-menu-nav-item-svg--done" aria-label="Atividade de Explicação concluída">
+							
+								
+								<use xlink:href="/images/gnarus/classPage/icon-menu-icons.svg#HQ_EXPLANATION"></use>
+							
+							
+						
+					</svg>
+					<span class="task-menu-nav-item-number">03</span>
+					<span class="task-menu-nav-item-text">
+						<span class="task-menu-nav-item-title" title="Preparando o ambiente">
+							Preparando o ambiente
+						</span>
+						
+					</span></a>
+				</li>
+			
+				
+				<li class="task-menu-nav-item ">
+					<a href="https://cursos.alura.com.br/course/kubernetes/task/30053" class="task-menu-nav-item-link task-menu-nav-item-link-VIDEO">
+						<svg class="task-menu-nav-item-svg task-menu-nav-item-svg--done" aria-label="Atividade de Vídeo concluída">
+							
+								
+								<use xlink:href="/images/gnarus/classPage/icon-menu-icons.svg#VIDEO"></use>
+							
+							
+						
+					</svg>
+					<span class="task-menu-nav-item-number">04</span>
+					<span class="task-menu-nav-item-text">
+						<span class="task-menu-nav-item-title" title="Utilizando o Docker">
+							Utilizando o Docker
+						</span>
+						
+						<span class="task-menu-nav-item-infos">
+							
+								<span class="task-menu-nav-item-videoDuration" title="Ir para o Vídeo">11min</span>
+							
+						</span>
+					</span>
+					
+					</a>
+				</li>
+			
+				
+				<li class="task-menu-nav-item ">
+					<a href="https://cursos.alura.com.br/course/kubernetes/task/30054" class="task-menu-nav-item-link task-menu-nav-item-link-SINGLE_CHOICE">
+						<svg class="task-menu-nav-item-svg task-menu-nav-item-svg--done" aria-label="Atividade de Atividade de Única Escolha concluída">
+							
+								
+								<use xlink:href="/images/gnarus/classPage/icon-menu-icons.svg#SINGLE_CHOICE"></use>
+							
+							
+						
+					</svg>
+					<span class="task-menu-nav-item-number">05</span>
+					<span class="task-menu-nav-item-text">
+						<span class="task-menu-nav-item-title" title="Nomeie uma vantagem do Docker">
+							Nomeie uma vantagem do Docker
+						</span>
+						
+					</span></a>
+				</li>
+			
+				
+				<li class="task-menu-nav-item ">
+					<a href="https://cursos.alura.com.br/course/kubernetes/task/30060" class="task-menu-nav-item-link task-menu-nav-item-link-SINGLE_CHOICE">
+						<svg class="task-menu-nav-item-svg task-menu-nav-item-svg--done" aria-label="Atividade de Atividade de Única Escolha concluída">
+							
+								
+								<use xlink:href="/images/gnarus/classPage/icon-menu-icons.svg#SINGLE_CHOICE"></use>
+							
+							
+						
+					</svg>
+					<span class="task-menu-nav-item-number">06</span>
+					<span class="task-menu-nav-item-text">
+						<span class="task-menu-nav-item-title" title="Sobre o Docker Compose">
+							Sobre o Docker Compose
+						</span>
+						
+					</span></a>
+				</li>
+			
+				
+				<li class="task-menu-nav-item ">
+					<a href="https://cursos.alura.com.br/course/kubernetes/task/30058" class="task-menu-nav-item-link task-menu-nav-item-link-TEXT_CONTENT">
+						<svg class="task-menu-nav-item-svg task-menu-nav-item-svg--done" aria-label="Atividade de Atividade sem Resposta do Aluno concluída">
+							
+								
+								<use xlink:href="/images/gnarus/classPage/icon-menu-icons.svg#TEXT_CONTENT"></use>
+							
+							
+						
+					</svg>
+					<span class="task-menu-nav-item-number">07</span>
+					<span class="task-menu-nav-item-text">
+						<span class="task-menu-nav-item-title" title="Mãos à obra: Docker Compose">
+							Mãos à obra: Docker Compose
+						</span>
+						
+					</span></a>
+				</li>
+			
+				
+				<li class="task-menu-nav-item task-menu-nav-item--selected">
+					<a href="https://cursos.alura.com.br/course/kubernetes/task/30059" class="task-menu-nav-item-link task-menu-nav-item-link-VIDEO">
+						<svg class="task-menu-nav-item-svg task-menu-nav-item-svg--done" aria-label="Atividade de Vídeo concluída">
+							
+								
+								<use xlink:href="/images/gnarus/classPage/icon-menu-icons.svg#VIDEO"></use>
+							
+							
+						
+					</svg>
+					<span class="task-menu-nav-item-number">08</span>
+					<span class="task-menu-nav-item-text">
+						<span class="task-menu-nav-item-title" title="Criando container web">
+							Criando container web
+						</span>
+						
+						<span class="task-menu-nav-item-infos">
+							
+								<span class="task-menu-nav-item-videoDuration" title="Ir para o Vídeo">15min</span>
+							
+						</span>
+					</span>
+					
+					</a>
+				</li>
+			
+				
+				<li class="task-menu-nav-item ">
+					<a href="https://cursos.alura.com.br/course/kubernetes/task/30061" class="task-menu-nav-item-link task-menu-nav-item-link-SINGLE_CHOICE">
+						<svg class="task-menu-nav-item-svg task-menu-nav-item-svg--done" aria-label="Atividade de Atividade de Única Escolha concluída">
+							
+								
+								<use xlink:href="/images/gnarus/classPage/icon-menu-icons.svg#SINGLE_CHOICE"></use>
+							
+							
+						
+					</svg>
+					<span class="task-menu-nav-item-number">09</span>
+					<span class="task-menu-nav-item-text">
+						<span class="task-menu-nav-item-title" title="Dockerfile">
+							Dockerfile
+						</span>
+						
+					</span></a>
+				</li>
+			
+				
+				<li class="task-menu-nav-item ">
+					<a href="https://cursos.alura.com.br/course/kubernetes/task/30062" class="task-menu-nav-item-link task-menu-nav-item-link-SINGLE_CHOICE">
+						<svg class="task-menu-nav-item-svg task-menu-nav-item-svg--done" aria-label="Atividade de Atividade de Única Escolha concluída">
+							
+								
+								<use xlink:href="/images/gnarus/classPage/icon-menu-icons.svg#SINGLE_CHOICE"></use>
+							
+							
+						
+					</svg>
+					<span class="task-menu-nav-item-number">10</span>
+					<span class="task-menu-nav-item-text">
+						<span class="task-menu-nav-item-title" title="Analisando o docker-compose">
+							Analisando o docker-compose
+						</span>
+						
+					</span></a>
+				</li>
+			
+				
+				<li class="task-menu-nav-item ">
+					<a href="https://cursos.alura.com.br/course/kubernetes/task/30063" class="task-menu-nav-item-link task-menu-nav-item-link-TEXT_CONTENT">
+						<svg class="task-menu-nav-item-svg task-menu-nav-item-svg--done" aria-label="Atividade de Atividade sem Resposta do Aluno concluída">
+							
+								
+								<use xlink:href="/images/gnarus/classPage/icon-menu-icons.svg#TEXT_CONTENT"></use>
+							
+							
+						
+					</svg>
+					<span class="task-menu-nav-item-number">11</span>
+					<span class="task-menu-nav-item-text">
+						<span class="task-menu-nav-item-title" title="Mãos à obra: Criando container web">
+							Mãos à obra: Criando container web
+						</span>
+						
+					</span></a>
+				</li>
+			
+				
+				<li class="task-menu-nav-item ">
+					<a href="https://cursos.alura.com.br/course/kubernetes/task/30064" class="task-menu-nav-item-link task-menu-nav-item-link-VIDEO">
+						<svg class="task-menu-nav-item-svg task-menu-nav-item-svg--done" aria-label="Atividade de Vídeo concluída">
+							
+								
+								<use xlink:href="/images/gnarus/classPage/icon-menu-icons.svg#VIDEO"></use>
+							
+							
+						
+					</svg>
+					<span class="task-menu-nav-item-number">12</span>
+					<span class="task-menu-nav-item-text">
+						<span class="task-menu-nav-item-title" title="Kubernetes">
+							Kubernetes
+						</span>
+						
+						<span class="task-menu-nav-item-infos">
+							
+								<span class="task-menu-nav-item-videoDuration" title="Ir para o Vídeo">07min</span>
+							
+						</span>
+					</span>
+					
+					</a>
+				</li>
+			
+				
+				<li class="task-menu-nav-item ">
+					<a href="https://cursos.alura.com.br/course/kubernetes/task/30067" class="task-menu-nav-item-link task-menu-nav-item-link-SINGLE_CHOICE">
+						<svg class="task-menu-nav-item-svg task-menu-nav-item-svg--done" aria-label="Atividade de Atividade de Única Escolha concluída">
+							
+								
+								<use xlink:href="/images/gnarus/classPage/icon-menu-icons.svg#SINGLE_CHOICE"></use>
+							
+							
+						
+					</svg>
+					<span class="task-menu-nav-item-number">13</span>
+					<span class="task-menu-nav-item-text">
+						<span class="task-menu-nav-item-title" title="O que seria o Kubernetes?">
+							O que seria o Kubernetes?
+						</span>
+						
+					</span></a>
+				</li>
+			
+				
+				<li class="task-menu-nav-item ">
+					<a href="https://cursos.alura.com.br/course/kubernetes/task/48576" class="task-menu-nav-item-link task-menu-nav-item-link-HQ_EXPLANATION">
+						<svg class="task-menu-nav-item-svg task-menu-nav-item-svg--done" aria-label="Atividade de Explicação concluída">
+							
+								
+								<use xlink:href="/images/gnarus/classPage/icon-menu-icons.svg#HQ_EXPLANATION"></use>
+							
+							
+						
+					</svg>
+					<span class="task-menu-nav-item-number">14</span>
+					<span class="task-menu-nav-item-text">
+						<span class="task-menu-nav-item-title" title="O que aprendemos?">
+							O que aprendemos?
+						</span>
+						
+					</span></a>
+				</li>
+			
+			
+		</ul>
+	</nav>
+	<section class="task-menu-sections">
+		<h2 class="task-menu-sections-title">
+			Aulas
+		</h2>
+		<select class="task-menu-sections-select" onchange="location.href='/course/kubernetes/section/'+this.value;">
+			
+				<option value="1" selected="selected">01. Introduzindo Kubernetes</option>
+			
+				<option value="2">02. Pod e Deployment</option>
+			
+				<option value="3">03. Utilizando os serviços</option>
+			
+				<option value="4">04. Entendendo StatefulSet</option>
+			
+				<option value="5">05. Deploy na Google Cloud</option>
+			
+		</select>
+	</section>
+	<section class="task-menu-others">
+		<h2 class="task-menu-others-title ">
+			Outros Links
+		</h2>
+		<a href="https://cursos.alura.com.br/forum/curso-kubernetes/todos" class="task-menu-others-link task-menu-others-link-forum" title="Ir para o fórum do curso">Fórum</a>
+		<a href="https://cursos.alura.com.br/dashboard" class="task-menu-others-link task-menu-others-link-curso" title="Ir para a página principal">Trocar Curso</a>
+	</section>
+	<section class="task-menu-footer">
+		<a class="task-menu-footer-user" href="https://cursos.alura.com.br/user/hoiama9" title="Ir para sua página de usuário">
+			<img src="0;.%C3%A7_files/734aa17bc09aa5acb0dfe31163f97805.png" alt="Gravatar de hoiama9" class="task-menu-footer-img" width="40px" height="40px">
+			
+				<p class="task-menu-footer-detalhes">
+					<span class="task-menu-footer-detalhes-nome">hoiama9</span>
+					<span class="task-menu-footer-detalhes-xp">
+						338.1k xp
+					</span>
+				</p>
+			
+			<input type="hidden" value="">
+			<input type="hidden" value="">
+		</a>
+		<a href="https://cursos.alura.com.br/dashboard" class="task-menu-footer-logo">
+			<img src="0;.%C3%A7_files/icon-menu-alura.svg" alt="Logo da Alura" class="task-menu-footer-logo-image" title="Ir para a página principal" width="19px" height="32px">
+		</a>
+	</section>
+</aside>
+
+</section><div class="full-screen__panel" style="display: none;">
+				<img id="full-screen__image" class="full-screen__image" src="" alt="">
+				<div class="full-screen__actions">
+				<button class="button buttonAction partitura-download">Anterior</button><button class="button buttonAction partitura-download">Sair</button><button class="button buttonAction partitura-download">Próximo</button></div> 
+			</div>
+
+
+
+
+	<script src="0;.%C3%A7_files/jquery-2.js"></script><script type="text/javascript" id="">function eventClick(d,a,b,c){a.includes(" \x3e ")&&(a=document.querySelector(a).textContent);b.includes(" \x3e ")&&(b=document.querySelector(b).textContent);(c=document.querySelector(c))&&c.addEventListener("click",function(){dataLayer.push({event:"gaEvent",eventCategory:d,eventAction:a,eventLabel:b})})}eventClick("Menu","Logo","","body \x3e div.home \x3e div \x3e header \x3e div \x3e nav \x3e a");eventClick("Menu","Todos os Cursos","Abrir","body \x3e div.home \x3e div \x3e header \x3e div \x3e nav \x3e div.header__nav__wrapper.header__nav__wrapper--menu \x3e div");
+eventClick("Menu","Todos os Cursos","Cursos de Mobile","body \x3e div.home \x3e div \x3e header \x3e div \x3e nav \x3e ul \x3e li.header-cursos-lista-categoria.header-cursos-lista-categoria--mobile \x3e a");eventClick("Menu","Todos os Cursos","Cursos de Programa\u00e7\u00e3o","body \x3e div.home \x3e div \x3e header \x3e div \x3e nav \x3e ul \x3e li.header-cursos-lista-categoria.header-cursos-lista-categoria--programacao \x3e a");eventClick("Menu","Todos os Cursos","Cursos de Front-end","body \x3e div.home \x3e div \x3e header \x3e div \x3e nav \x3e ul \x3e li.header-cursos-lista-categoria.header-cursos-lista-categoria--front-end \x3e a");
+eventClick("Menu","Todos os Cursos","Cursos de Infraestrutura","body \x3e div.home \x3e div \x3e header \x3e div \x3e nav \x3e ul \x3e li.header-cursos-lista-categoria.header-cursos-lista-categoria--infraestrutura \x3e a");eventClick("Menu","Todos os Cursos","Cursos de Design \x26 UX","body \x3e div.home \x3e div \x3e header \x3e div \x3e nav \x3e ul \x3e li.header-cursos-lista-categoria.header-cursos-lista-categoria--design-ux \x3e a");eventClick("Menu","Todos os Cursos","Cursos de Business","body \x3e div.home \x3e div \x3e header \x3e div \x3e nav \x3e ul \x3e li.header-cursos-lista-categoria.header-cursos-lista-categoria--business \x3e a");
+eventClick("Menu","Carreiras e Forma\u00e7\u00f5es","","body \x3e div.home \x3e div \x3e header \x3e div \x3e nav \x3e div.header__nav__wrapper.header__nav__wrapper--menu \x3e a:nth-child(2)");eventClick("Menu","Como funciona","","body \x3e div.home \x3e div \x3e header \x3e div \x3e nav \x3e div.header__nav__wrapper.header__nav__wrapper--menu \x3e a:nth-child(3)");eventClick("Menu","Para empresas","","body \x3e div.home \x3e div \x3e header \x3e div \x3e nav \x3e div.header__nav__wrapper.header__nav__wrapper--menu \x3e a:nth-child(4)");
+eventClick("Menu","Entrar","","body \x3e div.home \x3e div \x3e header \x3e div \x3e nav \x3e div.header__nav__wrapper.header__nav__wrapper--ctas \x3e a:nth-child(1)");eventClick("Menu","Matricule-se","","body \x3e div.home \x3e div \x3e header \x3e div \x3e nav \x3e div.header__nav__wrapper.header__nav__wrapper--ctas \x3e a.header__nav__link.header__nav__link--cta");eventClick("Menu","Busca","Abrir","body \x3e div.home \x3e div \x3e header \x3e section \x3e div:nth-child(2) \x3e a");
+eventClick("Menu","Busca","Buscar","body \x3e div.home \x3e div \x3e header \x3e section \x3e div:nth-child(1) \x3e form \x3e button");eventClick("Footer","Primeira Se\u00e7\u00e3o","Alura","body \x3e footer.footer \x3e div \x3e div.footer-info \x3e div.footer-logos \x3e a.footer-logos-home");eventClick("Footer","Primeira Se\u00e7\u00e3o","Caelum","body \x3e footer.footer \x3e div \x3e div.footer-info \x3e div.footer-logos \x3e a.footer-link-caelum");
+eventClick("Footer","Primeira Se\u00e7\u00e3o","Apostilas","body \x3e footer.footer \x3e div \x3e div.footer-navegue \x3e ul \x3e li:nth-child(1) \x3e a");eventClick("Footer","Primeira Se\u00e7\u00e3o","Planos","body \x3e footer.footer \x3e div \x3e div.footer-navegue \x3e ul \x3e li:nth-child(2) \x3e a");eventClick("Footer","Primeira Se\u00e7\u00e3o","Todos os Cursos","body \x3e footer.footer \x3e div \x3e div.footer-navegue \x3e ul \x3e li:nth-child(3) \x3e a");
+eventClick("Footer","Primeira Se\u00e7\u00e3o","Carreiras","body \x3e footer.footer \x3e div \x3e div.footer-navegue \x3e ul \x3e li:nth-child(4) \x3e a");eventClick("Footer","Primeira Se\u00e7\u00e3o","Instrutores","body \x3e footer.footer \x3e div \x3e div.footer-navegue \x3e ul \x3e li:nth-child(5) \x3e a");eventClick("Footer","Primeira Se\u00e7\u00e3o","Como virar Instrutor","body \x3e footer.footer \x3e div \x3e div.footer-navegue \x3e ul \x3e li:nth-child(6) \x3e a");
+eventClick("Footer","Primeira Se\u00e7\u00e3o","Ranking","body \x3e footer.footer \x3e div \x3e div.footer-navegue \x3e ul \x3e li:nth-child(7) \x3e a");eventClick("Footer","Primeira Se\u00e7\u00e3o","Blog da Alura","body \x3e footer.footer \x3e div \x3e div.footer-navegue \x3e ul \x3e li:nth-child(8) \x3e a");eventClick("Footer","Primeira Se\u00e7\u00e3o","Podcast Nerdtech","body \x3e footer.footer \x3e div \x3e div.footer-navegue \x3e ul \x3e li:nth-child(9) \x3e a");
+eventClick("Footer","Primeira Se\u00e7\u00e3o","Pol\u00edtica de Privacidade","body \x3e footer.footer \x3e div \x3e div.footer-navegue \x3e ul \x3e li:nth-child(10) \x3e a");eventClick("Footer","Primeira Se\u00e7\u00e3o","Termos de Uso","body \x3e footer.footer \x3e div \x3e div.footer-navegue \x3e ul \x3e li:nth-child(11) \x3e a");eventClick("Footer","Primeira Se\u00e7\u00e3o","Sobre N\u00f3s","body \x3e footer.footer \x3e div \x3e div.footer-navegue \x3e ul \x3e li:nth-child(12) \x3e a");
+eventClick("Footer","Primeira Se\u00e7\u00e3o","Perguntas Frequentes","body \x3e footer.footer \x3e div \x3e div.footer-navegue \x3e ul \x3e li:nth-child(13) \x3e a");eventClick("Footer","Primeira Se\u00e7\u00e3o","Youtube","body \x3e footer.footer \x3e div \x3e div.footer-column.footer-column-cards \x3e div.footer-card-hotLinks \x3e div.footer-card-hotLinks-info.footer-card-redes \x3e a:nth-child(1)");eventClick("Footer","Primeira Se\u00e7\u00e3o","Facebook","body \x3e footer.footer \x3e div \x3e div.footer-column.footer-column-cards \x3e div.footer-card-hotLinks \x3e div.footer-card-hotLinks-info.footer-card-redes \x3e a:nth-child(2)");
+eventClick("Footer","Primeira Se\u00e7\u00e3o","Twitter","body \x3e footer.footer \x3e div \x3e div.footer-column.footer-column-cards \x3e div.footer-card-hotLinks \x3e div.footer-card-hotLinks-info.footer-card-redes \x3e a:nth-child(3)");eventClick("Footer","Primeira Se\u00e7\u00e3o","Hipsters","body \x3e footer.footer \x3e div \x3e div.footer-column.footer-column-cards \x3e div.footer-card-hotLinks \x3e div.footer-card-hotLinks-info.footer-card-redes \x3e a:nth-child(4)");
+eventClick("Footer","Primeira Se\u00e7\u00e3o","Google Play","body \x3e footer.footer \x3e div \x3e div.footer-column.footer-column-cards \x3e div.footer-card-hotLinks \x3e div.footer-card-hotLinks-info.footer-card-mobile \x3e a:nth-child(1)");eventClick("Footer","Primeira Se\u00e7\u00e3o","App Store","body \x3e footer.footer \x3e div \x3e div.footer-column.footer-column-cards \x3e div.footer-card-hotLinks \x3e div.footer-card-hotLinks-info.footer-card-mobile \x3e a:nth-child(2)");
+eventClick("Footer","Primeira Se\u00e7\u00e3o","Fale Conosco","body \x3e footer.footer \x3e div \x3e div:nth-child(3) \x3e a.footer-card.footer-card-contato");eventClick("Footer","Primeira Se\u00e7\u00e3o","Empresa?","body \x3e footer.footer \x3e div \x3e div:nth-child(3) \x3e a.footer-card.footer-card-empresa");eventClick("Footer","Mobile","body \x3e nav \x3e div \x3e a:nth-child(2)","body \x3e nav \x3e div \x3e a:nth-child(2)");
+eventClick("Footer","Mobile","body \x3e nav \x3e div \x3e a:nth-child(3)","body \x3e nav \x3e div \x3e a:nth-child(3)");eventClick("Footer","Mobile","body \x3e nav \x3e div \x3e a:nth-child(4)","body \x3e nav \x3e div \x3e a:nth-child(4)");eventClick("Footer","Mobile","body \x3e nav \x3e div \x3e a:nth-child(5)","body \x3e nav \x3e div \x3e a:nth-child(5)");eventClick("Footer","Mobile","body \x3e nav \x3e div \x3e a:nth-child(6)","body \x3e nav \x3e div \x3e a:nth-child(6)");
+eventClick("Footer","Programa\u00e7\u00e3o","body \x3e nav \x3e div \x3e a:nth-child(8)","body \x3e nav \x3e div \x3e a:nth-child(8)");eventClick("Footer","Programa\u00e7\u00e3o","body \x3e nav \x3e div \x3e a:nth-child(9)","body \x3e nav \x3e div \x3e a:nth-child(9)");eventClick("Footer","Programa\u00e7\u00e3o","body \x3e nav \x3e div \x3e a:nth-child(10)","body \x3e nav \x3e div \x3e a:nth-child(10)");eventClick("Footer","Programa\u00e7\u00e3o","body \x3e nav \x3e div \x3e a:nth-child(11)","body \x3e nav \x3e div \x3e a:nth-child(11)");
+eventClick("Footer","Programa\u00e7\u00e3o","body \x3e nav \x3e div \x3e a:nth-child(12)","body \x3e nav \x3e div \x3e a:nth-child(12)");eventClick("Footer","Front-end","body \x3e nav \x3e div \x3e a:nth-child(14)","body \x3e nav \x3e div \x3e a:nth-child(14)");eventClick("Footer","Front-end","body \x3e nav \x3e div \x3e a:nth-child(15)","body \x3e nav \x3e div \x3e a:nth-child(15)");eventClick("Footer","Front-end","body \x3e nav \x3e div \x3e a:nth-child(16)","body \x3e nav \x3e div \x3e a:nth-child(16)");
+eventClick("Footer","Front-end","body \x3e nav \x3e div \x3e a:nth-child(17)","body \x3e nav \x3e div \x3e a:nth-child(17)");eventClick("Footer","Front-end","body \x3e nav \x3e div \x3e a:nth-child(18)","body \x3e nav \x3e div \x3e a:nth-child(18)");eventClick("Footer","Infraestrutura","body \x3e nav \x3e div \x3e a:nth-child(20)","body \x3e nav \x3e div \x3e a:nth-child(20)");eventClick("Footer","Infraestrutura","body \x3e nav \x3e div \x3e a:nth-child(21)","body \x3e nav \x3e div \x3e a:nth-child(21)");
+eventClick("Footer","Infraestrutura","body \x3e nav \x3e div \x3e a:nth-child(22)","body \x3e nav \x3e div \x3e a:nth-child(22)");eventClick("Footer","Infraestrutura","body \x3e nav \x3e div \x3e a:nth-child(23)","body \x3e nav \x3e div \x3e a:nth-child(23)");eventClick("Footer","Infraestrutura","body \x3e nav \x3e div \x3e a:nth-child(24)","body \x3e nav \x3e div \x3e a:nth-child(24)");eventClick("Footer","Design e UX","body \x3e nav \x3e div \x3e a:nth-child(26)","body \x3e nav \x3e div \x3e a:nth-child(26)");
+eventClick("Footer","Design e UX","body \x3e nav \x3e div \x3e a:nth-child(27)","body \x3e nav \x3e div \x3e a:nth-child(27)");eventClick("Footer","Design e UX","body \x3e nav \x3e div \x3e a:nth-child(28)","body \x3e nav \x3e div \x3e a:nth-child(28)");eventClick("Footer","Design e UX","body \x3e nav \x3e div \x3e a:nth-child(29)","body \x3e nav \x3e div \x3e a:nth-child(29)");eventClick("Footer","Design e UX","body \x3e nav \x3e div \x3e a:nth-child(30)","body \x3e nav \x3e div \x3e a:nth-child(30)");
+eventClick("Footer","Business","body \x3e nav \x3e div \x3e a:nth-child(32)","body \x3e nav \x3e div \x3e a:nth-child(32)");eventClick("Footer","Business","body \x3e nav \x3e div \x3e a:nth-child(33)","body \x3e nav \x3e div \x3e a:nth-child(33)");eventClick("Footer","Business","body \x3e nav \x3e div \x3e a:nth-child(34)","body \x3e nav \x3e div \x3e a:nth-child(34)");eventClick("Footer","Business","body \x3e nav \x3e div \x3e a:nth-child(35)","body \x3e nav \x3e div \x3e a:nth-child(35)");
+eventClick("Footer","Business","body \x3e nav \x3e div \x3e a:nth-child(36)","body \x3e nav \x3e div \x3e a:nth-child(36)");</script><script type="text/javascript" id="">elements=document.querySelectorAll("input, select");elements.forEach(function(b,c){b.addEventListener("change",function(a){a=this.getAttribute("name");dataLayer.push({event:"gaEvent",eventCategory:"Formul\u00e1rios",eventAction:"Altera\u00e7\u00e3o",eventLabel:a})})});</script>
+<script type="text/javascript" id="">var key="Think_Again45984$%";function log(a){console.log(a)}function getPars(){var a={};window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(b,c,d){a[c]=d});return a}function userId(a){a=sha256.hmac(key,a);dataLayer.push({event:"userId",userId:a})}var script=document.createElement("script");script.onload=function(){var a=getPars().e;a&&userId(a);a=document.querySelectorAll('[type\x3d"email"]');for(var b=0;b<a.length;b++)a[b].onchange=function(){userId(this.value)}};script.src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js";
+document.head.appendChild(script);</script>
+	<script src="0;.%C3%A7_files/buttonToggle.js" async=""></script>
+	<script src="0;.%C3%A7_files/sectionMenu.js" async=""></script>
+
+	<script src="0;.%C3%A7_files/marked.js"></script>
+	<script src="0;.%C3%A7_files/markdownEditor.js" async=""></script>
+	<script src="0;.%C3%A7_files/caret.js" async=""></script>
+	<script src="0;.%C3%A7_files/keydownWatchers.js" async=""></script>
+	<script src="0;.%C3%A7_files/prettify.js" async=""></script>
+
+	<script src="0;.%C3%A7_files/preventsMultipleInteractions.js" async=""></script>
+	<script src="0;.%C3%A7_files/assessment.js" async=""></script>
+	<script src="0;.%C3%A7_files/login-form.js" async=""></script>
+
+	<script src="0;.%C3%A7_files/menuSettings.js"></script>
+	<script src="0;.%C3%A7_files/ProjectSubmit.js"></script>
+	<script src="0;.%C3%A7_files/classPage.js"></script>
+	<script src="0;.%C3%A7_files/aria.js"></script>
+	<script src="0;.%C3%A7_files/phrase.js"></script>
+	<script src="0;.%C3%A7_files/feedback.js"></script>
+	<script src="0;.%C3%A7_files/ExtraContentProgressRequest.js"></script>
+	
+	
+		<!-- video specific -->
+		<script src="0;.%C3%A7_files/scroll-top.js"></script>
+		<script src="0;.%C3%A7_files/video.js"></script>
+		<script src="0;.%C3%A7_files/VideoPlayer.js"></script>
+		<script src="0;.%C3%A7_files/video-js.js"></script>
+		<script src="0;.%C3%A7_files/silvermine-videojs-quality-selector.js"></script>
+		<script src="0;.%C3%A7_files/video_002.js"></script>
+		<script src="0;.%C3%A7_files/vimeo.js"></script>
+	
+
+	
+	
+	
+	
+
+	<script src="0;.%C3%A7_files/partitura.js"></script>
+	<script src="0;.%C3%A7_files/audioProgress.js"></script>
+	<script src="0;.%C3%A7_files/audioPlayer.js"></script>
+
+		
+
+	
+		
+
+<script src="0;.%C3%A7_files/customerio.js"></script>
+<script>
+    var tracker = new CustomerIO('fccd7e3d49531457b6b2');
+    tracker.identify('302549', 'hoiama9@gmail.com', '1555355965');
+</script>
+	
+
+	<script src="0;.%C3%A7_files/darkMode.js">
+	</script>
+
+	
+		
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-42101548-1', 'alura.com.br');
+  
+  
+  	ga('set', 'userId', '302549');
+  
+  
+  ga('require', 'displayfeatures');
+  
+  	ga('send', 'pageview');
+  
+  
+</script>
+	
+
+	<script>new DarkModeToggler().refreshListener()</script>
+
+
+
+
+<script src="0;.%C3%A7_files/MarkdownProcessing.js"></script>
+<script>
+	new MarkdownProcessing("https://cursos.alura.com.br").onLoad();
+</script></body></html>

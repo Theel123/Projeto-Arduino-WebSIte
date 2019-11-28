@@ -1,5 +1,6 @@
 <?php   
- 
+ print('oi');
+die('teste');
 
    require 'PHPMailer/PHPMailerAutoload.php';
         
@@ -7,7 +8,7 @@
 
                   $assunto = $_POST['nome'];
      }
-       if (isset($_POST['nome']) && !empty($_POST['nome'])) {
+       if (isset($_POST['email']) && !empty($_POST['email'])) {
 
                   $mensagem = $_POST['nome'];
        }
@@ -35,7 +36,7 @@
         echo 'Não foi possível enviar a mensagem.<br>';
         echo 'Erro: ' . $mail->ErrorInfo;
     } else {
-         header('Location: index.php?enviado');
+         print('<script>alert('email enviado com sucesso');</script>');
    }
  
  
