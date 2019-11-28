@@ -519,9 +519,10 @@
                 <a class="botao-index" href="https://ohbraiaunib.blogspot.com/" target="_blank">Visite nosso blog</a>
             </section>
         </main>
-           <footer class="rodape-pagina">
+          
+               <footer class="rodape-pagina">
             <h2>Vamos conversar?</h2>
-            <p>Você pode nos contatar <a href="contato.html">por e-mail</a> ou pelo telefone <a href="tel:+55=1234">(12) 3456-7890</a></p>
+            <p>Você pode nos contatar <a href="contato.html">por e-mail</a> ou pelo telefone <a  target="_blank" href="https://api.whatsapp.com/send?phone=5511963444494&text=Ol%C3%A1%20seja%20bem%20vindo%2C%20somos%20da%20equipe%20cdc8%2C%20qual%20a%20sua%20duvida%20ou%20sugest%C3%A3o%20%3F">(12) 96344-4494</a></p>
           <ul class="icones-redes-sociais">
        <li>
                 <a href="https://github.com/Theel123/layoutSimples" target="_blank" class="github">
@@ -536,7 +537,7 @@
             <li>
                 <a href=" https://www.youtube.com/channel/UC9Cl5w1ASiqc-5rHoH7kgoQ?view_as=subscriber"target="_blank"  class="youtube">
                     Youtube
-
+                    
                 </a>
             </li>
 
