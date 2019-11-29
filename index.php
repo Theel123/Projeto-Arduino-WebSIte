@@ -306,19 +306,29 @@
                 cursor: pointer;
             }
                /*End-LightBox*/
- #fireCanvas {
-        margin: 10px;
-        margin-left: 650px;
+  #fireCanvas {
+       margin: 10px;
+        margin-left: 635px;
         text-align:center;
         align-content: center;
-        
         
       }
       table {
         border-collapse: collapse;
         border: 1px solid #000;
       }
-     
+      td {
+        width: 32px;
+        height: 32px;
+        color: #FFF;
+        border: 1px solid #000;
+        text-align: center;
+        vertical-align: center;
+        font-family: arial;
+        font-size: 10px;
+        position: relative;
+        font-weight: bold;
+      }
       td.pixel {
         width: 4px;
         height: 4px;
@@ -332,18 +342,17 @@
         right: 1px;
         color: #927450;
       }
+   
  
-    .logo_header
-{
-   .logo_header {
+ .logo_header {
   transform: rotate(-15deg);
   position:relative;
-  
   top:50%;
   left:50%;
   margin-left:-50px;
   width: 100px;
   height: 100px;
+  border-radius: 85px;
   
   /* CÓDIGO PARA CHAMAR A ANIMAÇÃO */
   -webkit-animation: rodaroda 3s linear alternate 3;
@@ -378,7 +387,6 @@
     0% { -webkit-transform:rotate(0deg); -moz-transform:rotate(0deg); -ms-transform:rotate(0deg); -o-transform:rotate(0deg); transform:rotate(0deg); }
     50% { -webkit-transform:rotate(180deg); -moz-transform:rotate(180deg); -ms-transform:rotate(180deg); -o-transform:rotate(180deg); transform:rotate(180deg); }
     100% { -webkit-transform:rotate(360deg); -moz-transform:rotate(360deg); -ms-transform:rotate(360deg); -o-transform:rotate(360deg); transform:rotate(360deg); }
-}
 }
         </style>
         
@@ -450,11 +458,19 @@
 
     </div> 
             <div class="logo_header">
-                <img src="imagens/braia.jpg" alt="Logo Kw Desgign">
+                <img src="imagens/braia.jpg" alt="Logo Kw Desgign" width="80px" height="80px">
             </div>
-                <div id="fireCanvas"></div>
-            <div class="logo_header">
-                 <img src="imagens/braia.jpg" alt="Logo Kw Desgign">
+  <div id="fireCanvas"></div>
+      <div class="margin">
+        <button onclick="decreaseFireSource()">-</button>
+        <button onclick="destroyFireSource()">Min Fire</button>
+        <button onclick="createFireSource()">Max Fire</button>
+        <button onclick="increaseFireSource()">+</button>
+      </div>
+      <div class="margin">
+        <button onclick="toggleDebugMode()">Toggle Debug Mode</button>
+      </div>            <div class="logo_header">
+                <img src="imagens/braia.jpg" alt="Logo Kw Desgign" width="80px" height="80px">
             </div>
             </section>
             
@@ -520,33 +536,27 @@
             </section>
         </main>
           
-               <footer class="rodape-pagina">
+       <footer class="rodape-pagina">
             <h2>Vamos conversar?</h2>
             <p>Você pode nos contatar <a href="contato.html">por e-mail</a> ou pelo telefone <a  target="_blank" href="https://api.whatsapp.com/send?phone=5511963444494&text=Ol%C3%A1%20seja%20bem%20vindo%2C%20somos%20da%20equipe%20cdc8%2C%20qual%20a%20sua%20duvida%20ou%20sugest%C3%A3o%20%3F">(12) 96344-4494</a></p>
-          <ul class="icones-redes-sociais">
-       <li>
-                <a href="https://github.com/Theel123/layoutSimples" target="_blank" class="github">
-                    Github
-                </a>
-            </li>
-            <li>
-                <a href="https://twitter.com/BraiaUnib?s=08" target="_blank" class="twitter">
-                    Twitter
-                </a>
-            </li>
-            <li>
-                <a href=" https://www.youtube.com/channel/UC9Cl5w1ASiqc-5rHoH7kgoQ?view_as=subscriber"target="_blank"  class="youtube">
-                    Youtube
-                    
-                </a>
-            </li>
 
-            <li>
-                <a href=" https://www.instagram.com/ohbraia?r=nametag" target="_blank"  class="instagram">
-                    Instagram
-                </a>
-            </li>
-        </ul>
+            <ul class="icones-redes-sociais">
+                <li>
+                    <a href="https://github.com/Theel123/layoutSimples" target="_blank" class="github">Github</a>
+                </li>
+
+                <li>
+                    <a href="https://twitter.com/BraiaUnib?s=08" target="_blank" class="twitter">Twitter</a>
+                </li>
+
+                <li>
+                    <a href=" https://www.youtube.com/channel/UC9Cl5w1ASiqc-5rHoH7kgoQ?view_as=subscriber"target="_blank"  class="youtube">Youtube </a>
+                </li>
+
+                <li>
+                    <a href=" https://www.instagram.com/ohbraia?r=nametag" target="_blank"  class="instagram">Instagram</a>
+                </li>
+            </ul>
 
         </footer>
       

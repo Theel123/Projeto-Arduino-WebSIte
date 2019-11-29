@@ -16,6 +16,36 @@
 
 </script>
 <style type="text/css" media="screen">
+table {
+  border-collapse: collapse;
+  align-content:center;
+  width: 50em;
+  border: 1px solid #666;
+}
+thead {
+  background: #ccc url(https://www.devfuria.com.br/html-css/tabelas/bar.gif) repeat-x left center;
+  border-top: 1px solid #a5a5a5;
+  border-bottom: 1px solid #a5a5a5;
+}
+tr:hover {
+  background-color:#3d80df;
+  color: #fff;
+}
+thead tr:hover {
+  background-color: transparent;
+  color: inherit;
+}
+tr:nth-child(even) {
+    background-color: #edf5ff;
+}
+th {
+  font-weight: normal;
+  text-align: left;
+}
+th, td {
+  padding: 0.1em 1em;
+}
+
 
 
 
@@ -37,10 +67,10 @@
 
 <h1>Nossos Devs</h1>
 <br>
-<table border="1px" cellpadding="5px" cellspacing="0" >
+<table id="table">
   <thead>
     <tr>
-      <th>Foto</th>
+      <th>ID</th>
       <th>Nome</th>
       <th>Função</th>
       <th>Nick</th>
@@ -64,9 +94,9 @@
     </tr>
     <tr>
       <th>3</th>
-      <td>Diego Bolivia</td>
+      <td>Diego Rodriguez</td>
       <td>Designer Digital</td>
-      <td>diego.bolivia</td>
+      <td>diego.rodriguez</td>
       <td>github</td>
     </tr>
       <tr>
@@ -85,9 +115,9 @@
     </tr>
     <tr>
       <th>6</th>
-      <td>Leonardo (Sobrenome)</td>
+      <td>Leonardo Xavier </td>
       <td>Desenvolvedor Arduino / Financeiro</td>
-      <td>leonardo.sobrenome</td>
+      <td>leonardo.xavier</td>
       <td>github</td>
     </tr>
       <tr>
@@ -113,7 +143,7 @@
     </tr>
      <tr>
       <th>8</th>
-      <td>Rafael Abreu</td>
+      <td>Raphael Abreu</td>
       <td>Desenvolvedor Arduino</td>
       <td>rafael.abreu</td>
       <td>github</td>
@@ -134,9 +164,9 @@
     </tr>
       <tr>
       <th>11</th>
-      <td>Vitor (Sobrenome)</td>
+      <td>Vitor Hugo</td>
       <td>Desenvolvedor Arduino</td>
-      <td>vitor.sobrenome</td>
+      <td>vitor.hugo</td>
       <td>github</td>
     </tr>
   </tbody>
