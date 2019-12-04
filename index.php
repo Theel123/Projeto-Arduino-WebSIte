@@ -457,9 +457,7 @@
 
 
     </div> 
-            <div class="logo_header">
-                <img src="imagens/braia.jpg" alt="Logo Kw Desgign" width="80px" height="80px">
-            </div>
+            
   <div id="fireCanvas"></div>
       <div class="margin">
         <button onclick="decreaseFireSource()">-</button>
@@ -469,9 +467,7 @@
       </div>
       <div class="margin">
         <button onclick="toggleDebugMode()">Toggle Debug Mode</button>
-      </div>            <div class="logo_header">
-                <img src="imagens/braia.jpg" alt="Logo Kw Desgign" width="80px" height="80px">
-            </div>
+      </div>        
             </section>
             
             <section class="secao-inicio trabalhos">
